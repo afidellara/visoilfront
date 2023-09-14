@@ -1,0 +1,220 @@
+<section class="tabla">
+    <div class="container">
+        <h1 class="titulo-tabla"></h1>
+        <table class="table table-striped tabla-estilo">
+            <thead class="cabecero-tabla">
+                <tr>
+                    <th scope="col">Documento</th>
+                    <th scope="col">Nombres</th>
+                    <th scope="col">Ciudad</th>
+                    <th scope="col">Correo</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody class="cabecero-tabla">
+                <tr class="elemento">
+                    <td>1022323032</td>
+                    <td>Juan Perez</td>
+                    <td>Valledupar</td>
+                    <td>jperez@homail.com</td>
+                    <td>3019898123</td>
+                    <td>
+                        <div class="botones">
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn eliminar-btn"></button>
+                            </div>
+                            <div class="elemento_eliminar">
+                                <button class="elemento_eliminar--btn editar-btn" data-bs-toggle="modal" data-bs-target="#miModal"></button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="modal fade" id="miModal" tabindex="-1" aria-labelledby="miModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+            <div class="modal-header">
+                <h5 class="modal-title" id="miModalLabel">Editar datos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <section class="formulario">
+                    <div class="container">
+                        <form class="form-estilo">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p class="titulo"></p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control texto-for" id="cedula" name="cedula" placeholder="Cedula: Ej: 10042845733" required minlength="8" />
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Cedula requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Cedula debe contener al menos 8 caracteres
+                                        </div>
+                                        <label for="cedula" class="label-for">Cedula</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-selec">
+                                        <select class="form-select form-select-lg texto-for" aria-label=".form-select-lg example" id="tipoDocumento" name="tipoDocumento" #tipoDocumento="" required [ngClass]="">
+                        <option disabled selected>Tipo de documento</option>
+                        <option value="CC">Cedula de ciudadania</option>
+                        <option value="PS">Pasaporte</option>
+                        <option value="EX">Extranjero</option>
+                        <option value="OT">Otro</option>
+                      </select>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Tipo documento es requerido
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control texto-for" id="nombres" name="nombres" placeholder="Escriba sus nombres" #nombres="" [ngClass]="" required minlength="2" />
+                                        <label for="nombres" class="label-for">Nombres</label>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Nombres requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Nombre tene contener al menos 2 caracteres
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control texto-for" id="apellidos" name="apellidos" placeholder="Escriba sus apellidos" #apellidos="" [ngClass]="" required minlength="2" />
+                                        <label for="apellidos" class="label-for">Apellidos</label>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Apellidos requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Apellidos tene contener al menos 2 caracteres
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <select class="form-select form-select-lg texto-for" aria-label=".form-select-lg example" id="sexo" name="sexo" #sexo="" [ngClass]="" required>
+                      <option selected>Sexo</option>
+                      <option value="masculino">Masculino</option>
+                      <option value="femenino">Femenino</option>
+                      <option value="otro">Otro</option>
+                    </select>
+                                    <div [hidden]="" class="invalid-feedback">
+                                        Sexo requerido
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-date">
+                                        <input type="date" class="form-control texto-for input-lg" id="fechaNacimiento" name="fechaNacimiento" placeholder="Selecciona su fecha de nacimiento" #fechaNacimiento="" [ngClass]="" required />
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Fecha de nacimiento requerido
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 estilo-tf">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control texto-for estilo-tf" id="telefono" name="telefono" placeholder="Telefono: Ej: 3005732323" #telefono="" [ngClass]="" required minlength="10" />
+                                        <label for="telefono" class="label-for">Telefono</label>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Telefono requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Telefono debe contener al menos 10 caracteres
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 estilo-tf">
+                                    <select class="form-select form-select-lg texto-for estilo-tf" aria-label=".form-select-lg example" id="ciudad" name="ciudad" #ciudad="" [ngClass]="" required>
+                      <option selected>Ciudad</option>
+                      <option
+                        
+                        value=""
+                      >
+                        
+                      </option>
+                    </select>
+                                    <div [hidden]="" class="invalid-feedback">
+                                        Ciudad requerido
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control texto-for" id="correo" name="correo" #correo="" [ngClass]="" required placeholder="Correo: Ej: usuario@correo.com" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Correo requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Correo no es valido
+                                        </div>
+                                        <label for="correo" class="label-for">Correo</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control texto-for" id="password" name="password" #password="" [ngClass]="" required placeholder="Escriba su contraseña" minlength="6" maxlength="15" />
+                                        <label for="password" class="label-for">Contraseña</label>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Contraseña requerido
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Contraseña debe contener al menos 6 caracteres
+                                        </div>
+                                        <div [hidden]="" class="invalid-feedback">
+                                            Contraseña debe contener maximo 15 caracteres
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control texto-for" id="password2" name="password2" placeholder="Repita su contraseña" />
+                                        <label for="password2" class="label-for">Repita Contraseña</label
+                      >
+                    </div>
+                  </div>
+  
+                  <div class="row">
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="boton-eliminar"
+                        data-bs-dismiss="modal"
+                      >
+                        Cerrar
+                      </button>
+                      <button
+                        type="submit"
+                        class="boton-actualizar"
+                        data-bs-dismiss="modal"
+                      >
+                        Guardar cambios
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
