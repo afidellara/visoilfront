@@ -7,7 +7,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
-import { TablaComponent } from './components/tabla/tabla.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -16,8 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     HomeComponent,
     FooterComponent,
-    GaleriaComponent,
-    TablaComponent
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
