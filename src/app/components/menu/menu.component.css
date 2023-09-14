@@ -1,5 +1,5 @@
 .navbar {
-    background-color: #0E3859/* Ajusta el último valor (0.9) para controlar la opacidad */
+    background-color: #B2BA26/* Ajusta el último valor (0.9) para controlar la opacidad */
 }
 
 .imagen-logo {
@@ -23,11 +23,11 @@
     font-size: 25px;
     transition: cubic-bezier(0.77, 0, 0.175, 1);
     text-decoration: underline;
-    text-decoration-color: bisque;
+    text-decoration-color: #FFFF;
 }
 
 .nav-link {
-    color: bisque;
+    color: #FFFF;
 }
 
 @media screen and (min-width: 1115px) and (min-height: 699px) {
@@ -45,7 +45,7 @@
 
 .navbar-toggler-icon,
 .navbar-toggler {
-    background-color: bisque;
+    background-color: #FFFF;
 }
 
 .usuario {
