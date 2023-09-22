@@ -1,0 +1,56 @@
+.login-for {
+    margin-top: 20px;
+    background-color: #acb332
+}
+
+.form-estilo {
+    padding: 30px;
+}
+
+.input-text {
+    margin-bottom: 20px;
+}
+
+.boton-login {
+    background-color: #4CAF50;
+    /* Color de fondo */
+    color: white;
+    /* Color del texto */
+    border: none;
+    /* Sin borde */
+    padding: 12px;
+    /* Espaciado interno */
+    text-align: center;
+    /* Alineación centrada del texto */
+    text-decoration: none;
+    /* Sin subrayado */
+    display: inline;
+    /* Mostrar como elemento en línea */
+    font-size: 16px;
+    /* Tamaño de fuente */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    cursor: pointer;
+    /* Cambiar el cursor al pasar por encima */
+}
+
+.formulario {
+    margin-left: 270px;
+}
+
+.boton-login:hover {
+    background-color: #45a049;
+}
+
+.label-for:focus-visible {
+    background-color: #0e3859;
+    color: beige;
+}
+
+.texto {
+    text-align: center;
+    color: beige;
+    font-weight: bold;
+}
+
+@media screen and (min-width: 1115px) and (min-height: 699px) {}
