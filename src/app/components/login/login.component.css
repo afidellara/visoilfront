@@ -1,56 +1,49 @@
-.login-for {
-    margin-top: 20px;
-    background-color: #acb332
-}
-
-.form-estilo {
-    padding: 30px;
-}
-
-.input-text {
-    margin-bottom: 20px;
-}
-
-.boton-login {
-    background-color: #4CAF50;
-    /* Color de fondo */
-    color: white;
-    /* Color del texto */
-    border: none;
-    /* Sin borde */
-    padding: 12px;
-    /* Espaciado interno */
+h4 {
+    margin-bottom: 15px;
     text-align: center;
-    /* Alineación centrada del texto */
-    text-decoration: none;
-    /* Sin subrayado */
-    display: inline;
-    /* Mostrar como elemento en línea */
-    font-size: 16px;
-    /* Tamaño de fuente */
-    border-radius: 4px;
-    /* Bordes redondeados */
-    cursor: pointer;
-    /* Cambiar el cursor al pasar por encima */
+    color: rgb(2, 2, 2);
 }
 
-.formulario {
-    margin-left: 270px;
+.container {
+    margin-top: 45px;
+    margin-bottom: 45px;
+
 }
 
-.boton-login:hover {
-    background-color: #45a049;
+
+.Formulario{
+    height: 300px;
+    width: 480px;
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 13px 37px #87b92a;;
+
 }
 
-.label-for:focus-visible {
-    background-color: #0e3859;
-    color: beige;
+.table {
+    width: 500px;
+    background: rgb(210, 216, 210);
+    border-radius: 10px 10px 10px 10px;
 }
 
-.texto {
-    text-align: center;
-    color: beige;
-    font-weight: bold;
+.form-control {
+    margin: auto;
+    margin-bottom: 12px;
+    width: 400px;
 }
 
-@media screen and (min-width: 1115px) and (min-height: 699px) {}
+button {
+    width: 400px;
+    margin-top: 8px;
+    margin-bottom: 30px;
+    margin-left: 39px;
+    background: #87b92a;
+    border-color: #87b92a;
+}
+
+.text{
+    margin-left: 42px;
+}
+
+img{
+    border-radius: 18px;
+}
