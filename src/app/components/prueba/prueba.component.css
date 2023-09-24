@@ -187,10 +187,12 @@ h4{
 .icons{
     margin-left: 650px;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .ico{
     margin-right: 12px;
+    cursor: pointer;
 }
 
 .colu{
