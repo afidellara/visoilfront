@@ -1,20 +1,37 @@
 
-    <table class="container">
-        <tr>
-            <td>    
-                    <section class="Formulario">
-                        <h6>ㅤ</h6>
-                        <h4>INICIAR SESIÓN </h4>
-                        <h6 class="text" >Correo electrónico</h6>
-                        <input class="form-control" type="text"  aria-label="default input example" id="nombre">
-                        <h6 class="text">Contraseña</h6>
-                        <input class="form-control" type="text"  aria-label="default input example" id="apellido">
-                        <button type="button" class="btn btn-success" id="btn">INICIAR SESION</button>
-                    </section>
-            </td>
-            <td>
-                <img src="/assets/img/loginn.png" width="100%" height="100%" alt="Loginn imagen">
+<body class="cont">
+    
+	<img class="wave" src="/assets/img/wave.png">
+	<div class="container">
+		<div class="img">
+            <img class="icon" src="/assets/img/loginn.png">
+		</div>
+		<div class="login-content">
+			<form >
+				<img src="/assets/img/avatar.svg">
+				<h2 class="title">Bienvenido</h2>
+                <div class="input-div one" [ngClass]="{'focus': usernameInputFocused}">
+           		   <div class="i">
+           		   		<i class="fas fa-user"></i>
+           		   </div>
+           		   <div class="div">
+           		   		<h5>Correo </h5>
+                              <input type="text" class="input" id="username" (focus)="usernameInputFocused = true" (blur)="usernameInputFocused = false">
+           		   </div>
+           		</div>
+                   <div class="input-div pass" [ngClass]="{'focus': passwordInputFocused}">
+           		   <div class="i"> 
+           		    	<i class="fas fa-lock"></i>
+           		   </div>
+           		   <div class="div">
+           		    	<h5>Contraseña</h5>
+                           <input type="password" class="input" id="password" (focus)="passwordInputFocused = true" (blur)="passwordInputFocused = false">
+            	   </div>
+            	</div>
+            	<a href="#">¿Olvidaste tu contraseña?</a>
+            	<input type="buttonx	" class="btn" value="INICIAR SESION" id="btnLogin">
+            </form>
+        </div>
+    </div>
 
-            </td>
-        </tr>
-    </table>
+</body>
