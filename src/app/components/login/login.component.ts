@@ -1,18 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   usernameInputFocused: boolean = false;
   passwordInputFocused: boolean = false;
   user: string = '';
   pass: string = '';
+  showPassword: boolean = false; 
+  passwordToggleImageSrc: string = '/assets/img/eye-show.svg'; // Ruta de la imagen inicial
+
+
 
   constructor() {}
-
+  ngOnInit(): void {
+    this.user='';
+    this.pass='';
+  }
+  
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
+    this.passwordToggleImageSrc = this.showPassword ? '/assets/img/eye-close.svg' : '/assets/img/eye-show.svg';
+  }
   onInputFocus() {
     this.usernameInputFocused = true;
   }
@@ -33,8 +45,6 @@ export class LoginComponent {
   }
 
   login() {
-    // Lógica de inicio de sesión
     console.log('Botón de inicio de sesión clickeado');
-    // Puedes agregar tu lógica de inicio de sesión aquí
   }
 }

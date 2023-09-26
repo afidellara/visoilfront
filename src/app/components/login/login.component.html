@@ -16,18 +16,29 @@
            		   </div>
            		   <div class="div">
            		   		<h5>Correo </h5>
-							  <input type="text" class="input" id="username" [(ngModel)]="user" (focus)="onInputFocus()" (blur)="onInputBlur()">
+							  <input type="text" class="input" id="username" [(ngModel)]="user" name="user" (focus)="onInputFocus()" (blur)="onInputBlur()">
 							</div>
            		</div>
                    <div class="input-div pass" [ngClass]="{'focus': passwordInputFocused}">
-           		   <div class="i"> 
-           		    	<i class="fas fa-lock"></i>
-           		   </div>
-           		   <div class="div">
-           		    	<h5>Contraseña</h5>
-                           <input type="password" class="input" id="password" [(ngModel)]="pass" (focus)="onPasswordInputFocus()" (blur)="onPasswordInputBlur()">
-            	   </div>
-            	</div>
+					<div class="i"> 
+					  <i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+					  <h5>Contraseña</h5>
+					  <input
+						[type]="showPassword ? 'text' : 'password'"
+						class="input"
+						id="password"
+						[(ngModel)]="pass"
+						name="pass"
+						(focus)="onPasswordInputFocus()"
+						(blur)="onPasswordInputBlur()"
+					  >
+					  <div class="password-toggle" (click)="togglePasswordVisibility()">
+						<img class="ps" [src]="passwordToggleImageSrc">
+					</div>
+					</div>
+				  </div>				  
             	<a href="#">¿Olvidaste tu contraseña?</a>
             	<input type="buttonx	" class="btn" value="INICIAR SESION" id="btnLogin">
             </form>
