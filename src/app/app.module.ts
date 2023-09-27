@@ -10,6 +10,7 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
+import { NavComponent } from './components/nav/nav.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
     GaleriaComponent,
     LoginComponent,
     PruebaComponent,
+    NavComponent,
   ],
   imports: [
     BrowserModule,
