@@ -1,1 +1,133 @@
-<p>formulario-cliente works!</p>
+<div class="container">
+  <h1 class="form-title">Registrar Cliente</h1>
+  <form action="#" method="POST">
+    <div class="main-user-info">
+      <div class="user-input-box">
+        <label for="tipoDocumento">Tipo de documento</label>
+        <mat-form-field>
+          <mat-label>Favorite food</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{ food.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="user-input-box">
+        <label for="tipoDocumento">Tipo de documento</label>
+        <select id="tipoDocumento" name="tipoDocumento" required>
+          <option value="TI">TI</option>
+          <option value="CC">CC</option>
+          <option value="PS">PS</option>
+          <option value="EX">EX</option>
+        </select>
+      </div>
+      <div class="user-input-box">
+        <label for="cedula">Cédula</label>
+        <input
+          type="text"
+          id="cedula"
+          name="cedula"
+          placeholder="Cédula"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="nombre">Nombres</label>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="apellido">Apellidos</label>
+        <input
+          type="text"
+          id="apellido"
+          name="apellido"
+          placeholder="Apellidos"
+          required
+        />
+      </div>
+      <div class="gender-details-box">
+        <span class="gender-title">Género</span>
+        <div class="gender-category">
+          <input type="radio" name="genero" id="masculino" />
+          <label for="male">Masculino</label>
+          <input type="radio" name="genero" id="femenino" />
+          <label for="female">Femenino</label>
+          <input type="radio" name="genero" id="otro" />
+          <label for="other">Otro</label>
+          <input type="radio" name="genero" id="noEspecificado" />
+          <label for="other">No especificado</label>
+        </div>
+      </div>
+      <div class="user-input-box">
+        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+        <input
+          type="date"
+          id="fechaNacimiento"
+          name="fechaNacimiento"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="correoElectronico">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correoElectronico"
+          name="correoElectronico"
+          placeholder="Correo Electrónico"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="contraseña">Contraseña</label>
+        <input
+          type="password"
+          id="contraseña"
+          name="contraseña"
+          placeholder="Contraseña"
+          required
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="numeroTelefono">Número de Teléfono</label>
+        <input
+          type="tel"
+          id="numeroTelefono"
+          name="numeroTelefono"
+          placeholder="Número de Teléfono"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="direccion">Dirección</label>
+        <input
+          type="text"
+          id="direccion"
+          name="direccion"
+          placeholder="Dirección"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="fotoPerfil">Foto de Perfil</label>
+        <input
+          type="text"
+          id="fotoPerfil"
+          name="fotoPerfil"
+          placeholder="Foto de Perfil"
+        />
+      </div>
+      <div class="user-input-box">
+        <label for="ciudad">Ciudad</label>
+        <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" />
+      </div>
+    </div>
+    <div class="form-submit-btn">
+      <input type="submit" value="Registrar" />
+    </div>
+  </form>
+</div>
