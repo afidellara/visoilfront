@@ -12,6 +12,8 @@ import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
+import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
+import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 
 
 @NgModule({
@@ -25,6 +27,8 @@ import { FormularioProductoComponent } from './components/products/formulario-pr
     PruebaComponent,
     NavComponent,
     FormularioProductoComponent,
+    FormularioClienteComponent,
+    TablaClientesComponent,
   ],
   imports: [
     BrowserModule,

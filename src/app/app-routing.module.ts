@@ -4,11 +4,16 @@ import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { FormsModule } from '@angular/forms';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
+import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
+import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
+
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'registerproducts', component:FormularioProductoComponent},
+  {path: 'registrarcliente', component:FormularioClienteComponent},
+  {path: 'consultarclientes', component:TablaClientesComponent},
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
