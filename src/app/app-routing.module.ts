@@ -3,10 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { FormsModule } from '@angular/forms';
+import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
+  {path: 'registerproducts', component:FormularioProductoComponent},
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

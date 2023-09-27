@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { NavComponent } from './components/nav/nav.component';
+import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { NavComponent } from './components/nav/nav.component';
     LoginComponent,
     PruebaComponent,
     NavComponent,
+    FormularioProductoComponent,
   ],
   imports: [
     BrowserModule,
