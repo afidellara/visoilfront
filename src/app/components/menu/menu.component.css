@@ -155,16 +155,18 @@ h4{
 .list__arrow{
     margin-left: auto;
     transition: transform .3s;
+    cursor: pointer;
 }
 
 .list__show{
     width: 70%;
-    margin-left: 20px;
-    background-color: #171818;
+    margin-left: 30px;
+    background-color: #a3dada;
     border-radius: 10px;
     list-style: none;
     transition: height .4s;
     height: 0;
+    margin-bottom: 5px;
 }
 
 .icon{

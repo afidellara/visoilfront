@@ -1,72 +1,64 @@
 <section class="logo">
-    <img class="icon" src="/assets/img/VISOIL.png" height="180px"> 
-   </section>
-   <section class="Menu">
-     <a href="#" class="BT d-block p-3" id="btnInicio"> <img src="/assets/img/home.svg" class="list__img"> Inicio</a>
-     <a href="#" class="BT d-block p-3" id="btnRegistro"> <img src="/assets/img/user.svg" class="list__img">
-      Registro</a>
-      <ul class="list">
-        <div class="list__button list__button--click" (click)="toggleMenu()">
-          <img src="/assets/img/docs.svg" class="list__img">
-          <a href="#" class="nav__link">Servicios</a>
-          <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible">
-        </div>
-        
-        <ul class="list__show" *ngIf="isMenuVisible">
-          <div class="lll">
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Placa</a>
-          </li>
-        
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Marca</a>
-          </li>
-        </div>
-        </ul>
+  <img class="icon" src="/assets/img/VISOIL.png" height="180px"> 
+</section>
+<section class="Menu">
+  <a href="#" class="BT d-block p-3" id="btnInicio"> <img src="/assets/img/home.svg" class="list__img"> Inicio</a>
+  <a href="#" class="BT d-block p-3" id="btnRegistro"> <img src="/assets/img/user.svg" class="list__img">
+  Registro</a>
+  <ul class="list">
+      <li class="list__item">
+          <div class="list__button list__button--click" (click)="toggleMenu()">
+              <img src="/assets/img/docs.svg" class="list__img">
+              <a href="#" class="nav__link">Servicios</a>
+              <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible">
+          </div>
 
-      </ul>
-      <ul class="list">
-        <div class="list__button list__button--click" (click)="toggleMenu()">
-          <img src="/assets/img/docs.svg" class="list__img">
-          <a href="#" class="nav__link">Producto</a>
-          <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible">
-        </div>
-        
-        <ul class="list__show" *ngIf="isMenuVisible">
-          <div class="lll">
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Placa</a>
-          </li>
-        
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Marca</a>
-          </li>
-        </div>
-        </ul>
+          <ul class="list__show" [style.height.px]="isMenuVisible ? getHeight(1) : 0">
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Registrar</a>
+              </li>
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+              </li>
+          </ul>
+      </li>
+  </ul>
 
-      </ul>
-      <ul class="list">
-        <div class="list__button list__button--click" (click)="toggleMenu()">
-          <img src="/assets/img/docs.svg" class="list__img">
-          <a href="#" class="nav__link">Cliente</a>
-          <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible">
-        </div>
-        
-        <ul class="list__show" *ngIf="isMenuVisible">
-          <div class="lll">
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Placa</a>
-          </li>
-        
-          <li class="list__inside">
-            <a href="#" class="nav__link nav__link--inside">Marca</a>
-          </li>
-        </div>
-        </ul>
+  <ul class="list">
+      <li class="list__item">
+          <div class="list__button list__button--click" (click)="toggleMenu2()">
+              <img src="/assets/img/docs.svg" class="list__img">
+              <a href="#" class="nav__link">Producto</a>
+              <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible2">
+          </div>
 
-      </ul>
-     
-      
-      
+          <ul class="list__show" [style.height.px]="isMenuVisible2 ? getHeight(2) : 0">
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Registrar</a>
+              </li>
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+              </li>
+          </ul>
+      </li>
+  </ul>
 
-   </section>
+  <ul class="list">
+      <li class="list__item">
+          <div class="list__button list__button--click" (click)="toggleMenu3()">
+              <img src="/assets/img/docs.svg" class="list__img">
+              <a href="#" class="nav__link">Cliente</a>
+              <img src="/assets/img/arrow.svg" class="list__arrow" [class.rotate]="isMenuVisible3">
+          </div>
+
+          <ul class="list__show" [style.height.px]="isMenuVisible3 ? getHeight(3) : 0">
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Registrar</a>
+              </li>
+              <li class="list__inside">
+                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+              </li>
+          </ul>
+      </li>
+  </ul>
+</section>
