@@ -148,20 +148,19 @@ h4{
     margin-left: 25px;
 }
 
-.arrow .list__arrow{
+.list__arrow.rotate {
     transform: rotate(90deg);
-}
-
+  }
+  
 .list__arrow{
     margin-left: auto;
     transition: transform .3s;
 }
 
 .list__show{
-    color: black;
     width: 70%;
     margin-left: 20px;
-    background: #75bdbd;
+    background-color: #171818;
     border-radius: 10px;
     list-style: none;
     transition: height .4s;
@@ -196,4 +195,9 @@ p {
     font-size: 13px;
     margin-left: 32px;
 
+}
+
+.lll{
+    background-color: #9bd4d4;
+    border-radius: 10px;
 }
