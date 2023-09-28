@@ -14,9 +14,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
 import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { MatInputModule } from '@angular/material/input';
+
 
 @NgModule({
   declarations: [
@@ -29,17 +27,13 @@ import { MatInputModule } from '@angular/material/input';
     PruebaComponent,
     NavComponent,
     FormularioProductoComponent,
-    FormularioClienteComponent,
-    TablaClientesComponent,
+   
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
