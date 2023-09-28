@@ -14,6 +14,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
 import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
+import { ClienteAuthService } from './service/ClienteAuthService.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,8 +36,9 @@ import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabl
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClienteAuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

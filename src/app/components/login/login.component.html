@@ -30,7 +30,7 @@
 						class="input"
 						id="password"
 						[(ngModel)]="pass"
-						name="pass"
+						name="contraseña"
 						(focus)="onPasswordInputFocus()"
 						(blur)="onPasswordInputBlur()"
 					  >
@@ -39,7 +39,7 @@
 					</div>
 					</div>
 				  </div>				  
-            	<input type="buttonx	" class="btn" value="INICIAR SESION" id="btnLogin">
+            	<input type="buttonx" class="btn" value="INICIAR SESION" id="btnLogin" (click)="iniciarSesion()">
 				<a href="#" class="olvido">¿Olvidaste tu contraseña?</a>
 
             </form>
