@@ -12,10 +12,10 @@ import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
-import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
-import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { ClienteAuthService } from './service/ClienteAuthService.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
+import { ProductoService } from './service/ProductoService.service';
 
 
 @NgModule({
@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
     PruebaComponent,
     NavComponent,
     FormularioProductoComponent,
+    TablaProductosComponent,
    
   ],
   imports: [
@@ -38,7 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [ClienteAuthService],
+  providers: [ClienteAuthService, ProductoService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
