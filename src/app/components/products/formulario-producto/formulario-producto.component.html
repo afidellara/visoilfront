@@ -1,16 +1,76 @@
-<h1>Formulario de Registro</h1>
-<form action="/procesar_formulario" method="POST">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" required><br><br>
-
-    <label for="cedula">Cédula:</label>
-    <input type="text" id="cedula" name="cedula" required><br><br>
-
-    <label>Sexo:</label>
-    <input type="radio" id="masculino" name="sexo" value="masculino" required>
-    <label for="masculino">Masculino</label>
-    <input type="radio" id="femenino" name="sexo" value="femenino">
-    <label for="femenino">Femenino</label><br><br>
-
-    <input type="submit" value="Enviar">
-</form>
+<div class="container">
+    <div class="title"> Registro de producto </div>
+    <form action="#">
+        <div class="user-details">
+            <div class="input-box">
+                <span class="details">
+                    Codigo del producto
+                </span>
+                <input type="text" placeholder ="Digite el código" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Nombre del producto
+                </span>
+                <input type="text" placeholder ="Escriba el nombre" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Descripcion del producto
+                </span>
+                <input type="text" placeholder ="Escriba la descripción" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Precio del producto
+                </span>
+                <input type="text" placeholder ="Escriba el precio" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Categoria del producto
+                </span>
+                <input type="text" placeholder ="Escriba la categoria" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Referencia del producto
+                </span>
+                <input type="text" placeholder ="Escriba la referencia" required>
+            </div>
+            <div class="filed">
+                <span class="details">
+                    Imagen del producto
+                </span>
+                <input type="file" placeholder ="Cargue la imagen" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Tela del producto
+                </span>
+                <input type="text" placeholder ="Escriba el tipo de tela" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Talla del producto
+                </span>
+                <input type="text" placeholder ="Escriba la talla" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Medida del producto
+                </span>
+                <input type="text" placeholder ="Escriba la medida" required>
+            </div>
+            <div class="input-box">
+                <span class="details">
+                    Diseño
+                </span>
+                <input type="text" placeholder ="Describa el diseño" required>
+            </div>
+            <div class="button">
+                <input type="submit" value="Registrar">
+            </div>
+        </div>
+    </form>
+</div>
