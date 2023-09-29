@@ -4,23 +4,20 @@
     <div class="main-user-info">
       <div class="user-input-box">
         <label for="tipoDocumento">Tipo de documento</label>
-        <!-- <mat-form-field>
-          <mat-label>Favorite food</mat-label>
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{ food.viewValue }}
-            </mat-option>
-          </mat-select>
-        </mat-form-field> -->
-      </div>
-      <div class="user-input-box">
-        <label for="tipoDocumento">Tipo de documento</label>
-        <select id="tipoDocumento" name="tipoDocumento" required>
-          <option value="TI">TI</option>
-          <option value="CC">CC</option>
-          <option value="PS">PS</option>
-          <option value="EX">EX</option>
-        </select>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01"
+              >Escoja:</label
+            >
+          </div>
+          <select id="tipoDocumento" name="tipoDocumento" required>
+            <option selected>Opciones</option>
+            <option value="TI">Tarjeta de Identidad</option>
+            <option value="CC">Cédula de Ciudadanía</option>
+            <option value="PS">Pasaporte</option>
+            <option value="EX">Cédula de Extranjería</option>
+          </select>
+        </div>
       </div>
       <div class="user-input-box">
         <label for="cedula">Cédula</label>
@@ -113,13 +110,15 @@
         />
       </div>
       <div class="user-input-box">
-        <label for="fotoPerfil">Foto de Perfil</label>
-        <input
-          type="text"
-          id="fotoPerfil"
-          name="fotoPerfil"
-          placeholder="Foto de Perfil"
-        />
+        <div class="mb-3">
+          <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
+          <input
+            class="form-control"
+            type="file"
+            id="fotoPerfil"
+            name="fotoPerfil"
+          />
+        </div>
       </div>
       <div class="user-input-box">
         <label for="ciudad">Ciudad</label>

@@ -16,9 +16,4 @@ export class FormularioClienteComponent {
     { value: 'PS', viewValue: 'Pasaporte' },
     { value: 'EX', viewValue: 'Cédula de Extranjería' }
   ];
-  foods = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
-  ];
 }
