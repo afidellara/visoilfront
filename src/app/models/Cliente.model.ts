@@ -33,4 +33,5 @@ export class Cliente{
         this.barrio=barrio
         this.pass=pass
    }
+   //modelo producto
 }
