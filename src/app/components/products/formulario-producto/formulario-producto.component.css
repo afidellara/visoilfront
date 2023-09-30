@@ -12,12 +12,14 @@ body {
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 7px 13px 90px #7bc4c4;
+
 }
 
 .container .title {
     font-size: 25px;
     font-weight: 500;
     position: relative;
+    font-weight: bold;
 }
 
 .container .title::before{
@@ -62,7 +64,48 @@ form .user-details .input-box{
     height: 45px;
     width: 400px;
     outline: none;
-    padding-left: 15px;
     font-size: 16px;
+    
 }
 
+.custom-file-upload {
+    width: 200px;
+    margin-top: 4px;
+    border: none;
+    display: inline-block;
+    background-color: #7bc4c4;
+    color: white;
+    padding: 10px 20px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+
+.imgg {
+    display: none;
+}
+
+
+.custom-file-upload:hover {
+    background: #98c9c9;
+}
+
+
+.btt{
+    height: 45px;
+    width: 950px;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-size: 500;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: #7bc4c4;
+}
+
+.btt:hover{
+
+    background: #98c9c9;
+
+}

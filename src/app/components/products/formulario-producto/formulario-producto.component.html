@@ -1,77 +1,83 @@
 <div class="container">
     <div class="title"> Registro de producto </div>
-    <form action="#" #adminForm="ngForm"
-    (submit)="registrarProducto(adminForm)">
+    <form action="#">
         <div class="user-details">
             <div class="input-box">
                 <span class="details">
                     Codigo del producto
                 </span>
-                <input type="text" placeholder ="Digite el código" [(ngModel)]="producto.codigo" name="codigo" required>
+                <input type="text" placeholder ="Digite el código" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Nombre del producto
                 </span>
-                <input type="text" placeholder ="Escriba el nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+                <input type="text" placeholder ="Escriba el nombre" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Descripcion del producto
                 </span>
-                <input type="text" placeholder ="Escriba la descripción" [(ngModel)]="producto.descripcion" name="descripcion" required>
+                <input type="text" placeholder ="Escriba la descripción" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Precio del producto
                 </span>
-                <input type="number" placeholder ="Escriba el precio" [(ngModel)]="producto.precio" name="precio" required>
+                <input type="text" placeholder ="Escriba el precio" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Categoria del producto
                 </span>
-                <input type="text" placeholder ="Escriba la categoria" [(ngModel)]="producto.categoria" name="categoria" required>
+                <input type="text" placeholder ="Escriba la categoria" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Referencia del producto
                 </span>
-                <input type="text" placeholder ="Escriba la referencia" [(ngModel)]="producto.referencia" name="referencia" required>
+                <input type="text" placeholder ="Escriba la referencia" required>
             </div>
             <div class="filed">
                 <span class="details">
                     Imagen del producto
                 </span>
-                <input type="file" placeholder ="Cargue la imagen" required>
-            </div>
+                <div class="file-input-container">
+                    <label for="file-input" class="custom-file-upload">
+                        Cargar imagen
+                    </label>
+                    <input id="file-input" type="file" class="imgg" required>
+                </div>
+            </div>  
+            
             <div class="input-box">
                 <span class="details">
                     Tela del producto
                 </span>
-                <input type="text" placeholder ="Escriba el tipo de tela" [(ngModel)]="producto.tela" name="tela" required>
+                <input type="text" placeholder ="Escriba el tipo de tela" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Talla del producto
                 </span>
-                <input type="text" placeholder ="Escriba la talla" [(ngModel)]="producto.talla" name="talla" required>
+                <input type="text" placeholder ="Escriba la talla" required>
             </div>
             <div class="input-box">
                 <span class="details">
                     Medida del producto
                 </span>
-                <input type="text" placeholder ="Escriba la medida" [(ngModel)]="producto.medida" name="medida" required>
+                <input type="text" placeholder ="Escriba la medida" required>
             </div>
             <div class="input-box">
                 <span class="details">
-                    Diseños
+                    Diseño
                 </span>
-                <input type="text" placeholder ="Describa el diseño" [(ngModel)]="producto.disenio" name="disenio" required>
+                <input type="text" placeholder ="Describa el diseño" required>
             </div>
-            <div class="button">
-                <input type="submit" value="Registrar">
-            </div>
+           
         </div>
     </form>
+    <div class="button">
+        <input type="submit" class="btt" value="Registrar">
+    </div>
 </div>
