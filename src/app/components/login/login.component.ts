@@ -55,6 +55,9 @@ export class LoginComponent implements OnInit{
 
   
     iniciarSesion(){
+      if(this.user == '' && this.pass==''){
+        this.toastr.info('Escriba en los campos', 'Error campos vacios');
+      }else{
       this.clienteAuthService.login(this.user, this.pass).subscribe(
         (response) => {
           this.clienteAuthService.guardarInicioSesionEnCookie(response)
@@ -70,10 +73,10 @@ export class LoginComponent implements OnInit{
             this.toastr.error('Correo no existe','Error en el inicio de sesión:');
           }else{
             this.toastr.error('Error de Servidor','Error en el inicio de sesión:');
-
           }
         }
       )
+      }
     }
 
     cerrarSesion(){
