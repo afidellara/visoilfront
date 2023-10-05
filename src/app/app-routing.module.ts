@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'tablaproducts', component:TablaProductosComponent},
   {path: 'registrarcliente', component:FormularioClienteComponent},
   {path: 'consultarclientes', component:TablaClientesComponent},
+  
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];

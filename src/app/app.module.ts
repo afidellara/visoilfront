@@ -16,7 +16,8 @@ import { ClienteAuthService } from './service/ClienteAuthService.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
 import { ProductoService } from './service/ProductoService.service';
-
+import { ToastrModule, provideToastr } from 'ngx-toastr';
+import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -37,9 +38,11 @@ import { ProductoService } from './service/ProductoService.service';
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule
   ],
-  providers: [ClienteAuthService, ProductoService],
+  providers: [ClienteAuthService, ProductoService,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

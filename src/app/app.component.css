@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Poppins:wght@200&display=swap'); */
 
 
 body{
@@ -20,25 +20,13 @@ body{
     border-radius: 6px ;
 }
 
-.nav{
-    width: 500px;
-}
 
 .btnn{
     background: rgb(247, 244, 244);  
 }
-.navbar-search{
-    width: 400px;
-}
 
-.topbar .navbar-search {
-    width: 25rem;  
-  }
 
-.topbar .navbar-search input {
-    font-size: 0.85rem;
-    height: auto;
-}
+
 .btnB{
     background: rgba(159,124,222,255);
     border-color: rgba(159,124,222,255);
@@ -54,7 +42,7 @@ body{
 
 
 .list{
-    width:290px;
+    width: 280px;
 }
 
 ul{
@@ -115,9 +103,74 @@ h4{
     height: 100%;
 }
 
+.nav__link{
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 11px 0;
+    text-decoration: none;
+}
+
+.nav__link:link{
+    text-decoration: none;
+}
+
+.nav__link:hover{
+    color: white;
+}
+
+.nav__link--inside{
+    border-radius: 6px ;
+    padding-left: 40px;
+    text-align: left;
+}
+
+.nav__link--inside:hover{
+    text-decoration: none;
+}
+
+
+.list__item{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+.list__item--click{
+    cursor: pointer;
+}
+
+.list__button{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 70%;
+    margin-left: 25px;
+}
+
+.list__arrow.rotate {
+    transform: rotate(90deg);
+  }
+  
+.list__arrow{
+    margin-left: auto;
+    transition: transform .3s;
+    cursor: pointer;
+}
+
+.list__show{
+    width: 70%;
+    margin-left: 30px;
+    background-color: #a3dada;
+    border-radius: 10px;
+    list-style: none;
+    transition: height .4s;
+    height: 0;
+    margin-bottom: 5px;
+}
 
 .icon{
-    margin-left: 16px;
+    margin-left: 40px;
 }
 
 .icons{
@@ -144,4 +197,9 @@ p {
     font-size: 13px;
     margin-left: 32px;
 
+}
+
+.lll{
+    background-color: #9bd4d4;
+    border-radius: 10px;
 }
