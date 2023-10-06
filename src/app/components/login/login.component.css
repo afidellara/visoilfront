@@ -173,7 +173,7 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #7bc4c4, #7bc4c4, #7bc4c4);
+	background-image: linear-gradient(to right, #7bc4c4, #3a8e8e);
 	background-size: 200%;
 	font-size: 1.2rem;
 	color: #fff;
@@ -186,6 +186,9 @@ a:hover{
 .btn:hover{
 	background-position: right;
 }
+
+
+
 
 
 @media screen and (max-width: 1050px){

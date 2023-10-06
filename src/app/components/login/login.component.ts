@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit{
     this.pass='';
   }
   
+  
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
     this.passwordToggleImageSrc = this.showPassword ? '/assets/img/eye-close.svg' : '/assets/img/eye-show.svg';
