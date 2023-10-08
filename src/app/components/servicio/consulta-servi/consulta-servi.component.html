@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="user-details">
+      <div class="title"> Consultar Servicio </div>
+      <div class="button">
+        <input type="button" class="btt" (click)="agregarRegistros()" value="Visualizar">
+      </div>
+      <table class="content-table" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Costo</th>
+            <th scope="col">FechaPedido</th>
+            <th scope="col">Descripcion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let registro of registros">
+            <td>{{ registro.cliente }}</td>
+            <td>{{ registro.costo }}</td>
+            <td>{{ registro.fechaPedido }}</td>
+            <td>{{ registro.descripcion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
