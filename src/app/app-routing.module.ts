@@ -7,6 +7,9 @@ import { FormularioProductoComponent } from './components/products/formulario-pr
 import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
+import { RegistroServiComponent } from './components/servicio/registro-servi/registro-servi.component';
+import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
+import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
 
 
 
@@ -16,6 +19,10 @@ const routes: Routes = [
   {path: 'tablaproducts', component:TablaProductosComponent},
   {path: 'registrarcliente', component:FormularioClienteComponent},
   {path: 'consultarclientes', component:TablaClientesComponent},
+  {path: 'registrarServi', component:RegistroServiComponent},
+  {path: 'consultarServi', component:ConsultaServiComponent},
+  {path: 'formularioServi', component:FormularioServiComponent},
+
   
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}

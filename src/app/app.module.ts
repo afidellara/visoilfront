@@ -18,6 +18,11 @@ import { TablaProductosComponent } from './components/products/tabla-productos/t
 import { ProductoService } from './service/ProductoService.service';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
 import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { RegistroServiComponent } from './components/servicio/registro-servi/registro-servi.component';
+import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
+import { ClienteService } from './service/ClienteService.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +36,9 @@ import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-brow
     NavComponent,
     FormularioProductoComponent,
     TablaProductosComponent,
+    RegistroServiComponent,
+    ConsultaServiComponent,
+    FormularioServiComponent,
    
   ],
   imports: [
@@ -40,9 +48,10 @@ import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-brow
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
+    FontAwesomeModule,
     BrowserAnimationsModule
   ],
-  providers: [ClienteAuthService, ProductoService,provideToastr(),provideAnimations()],
+  providers: [ClienteAuthService, ProductoService,ClienteService ,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

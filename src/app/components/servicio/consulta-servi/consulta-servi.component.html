@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="user-details">
+      <div class="title"> Consultar Servicio </div>
+      <div class="filtro">
+        <div class="input-box">
+          <input type="text" placeholder="Digite la informacion" required>
+        </div>
+        <div class="input-box">
+          <select>
+            <option value="opcion1">Todos</option>
+            <option value="opcion2">Nombre</option>
+            <option value="opcion3">Pedido</option>
+            <option value="opcion4">Costo</option>
+          </select>
+        </div>
+        <div class="button">
+          <input type="button" class="btt" (click)="agregarRegistros()" value="Visualizar">
+        </div>
+      </div>
+      
+      <table class="content-table" id="table">
+        <thead>
+          <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Costo</th>
+            <th scope="col">FechaPedido</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let registro of registros; let i = index">
+            <td>{{ registro.cliente }}</td>
+            <td>{{ registro.costo }}</td>
+            <td>{{ registro.fechaPedido }}</td>
+            <td>{{ registro.descripcion }}</td>
+            <td class="text-center">
+              <a (click)="abrirModal(i)" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" data-bs-whatever="@mdo" class="btnEditar btn btn-primary">Editar</a>
+              <a (click)="eliminarRegistro(i)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">Borrar</a>
+
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngFor="let registro of registros; let i = index">
+        <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ingrese los Datos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <label for="recipient-name" class="col-form-label">Cliente:</label>
+                  <input type="text" class="form-control" id="cliente" name="cliente" [(ngModel)]="registroSeleccionado.cliente">
+                  <label for="recipient-name" class="col-form-label">Costo:</label>
+                  <input type="text" class="form-control" id="costo" name="costo"  [(ngModel)]="registroSeleccionado.costo">
+                  <label for="recipient-name" class="col-form-label">Fecha Pedido:</label>
+                  <input type="text" class="form-control" id="fechape" name="fechaPedido" [(ngModel)]="registroSeleccionado.fechaPedido">
+                  <label for="recipient-name" class="col-form-label">Descripcion:</label>
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="registroSeleccionado.descripcion">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btnG btn btn-light" (click)="guardarCambios(i)" data-bs-dismiss="modal">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

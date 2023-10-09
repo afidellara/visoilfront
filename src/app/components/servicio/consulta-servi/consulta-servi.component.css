@@ -1,0 +1,168 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background: white;
+}
+
+.container{
+    margin-top: 55px;
+    width: 850px;
+    background: white;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 7px 13px 90px #7bc4c4;
+
+}
+
+.container .title {
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 200px;
+    box-shadow: 7px 13px 90px #7bc4c4;
+}
+
+.btt{
+    height: 45px;
+    width: 100px;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background: #7bc4c4;
+}
+
+.btt:hover{
+
+    background: #98c9c9;
+
+}
+
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 700px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+  
+.content-table thead tr {
+    background-color:  #7bc4c4;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+  
+.content-table th,
+.content-table td {
+ padding: 12px 15px;
+ text-align: center;
+}
+  
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    color: black
+}
+  
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+  
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid #7bc4c4;;
+}
+  
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color:  #7bc4c4;;
+}
+
+.table {
+    margin-top:25px;
+}
+
+
+
+.filtro {
+  justify-content: space-between;
+  align-items: center;  
+}
+  
+.filtro .input-box {
+    display: inline-block;
+    margin-right: 10px;
+}
+    
+.filtro .button {
+    display: inline-block;
+}
+
+select {
+    width:120px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    color: #333; 
+    border-color: #75bdbd;
+  }
+  
+  select:focus {
+    outline: none; 
+    border-color: #007bff; 
+  }
+  
+  select option {
+    background-color: #fff; 
+    color: #333; 
+  }
+  
+  select option:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  .container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(1000px / 2 -20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 250px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #75bdbd;
+    padding-left: 15px;
+    font-size: 16px;
+}
