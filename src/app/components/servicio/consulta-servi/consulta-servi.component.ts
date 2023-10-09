@@ -42,6 +42,11 @@
       this.modalesAbiertos[index] = false;
     }
 
+    eliminarRegistro(index: number) {
+      // Aquí puedes implementar la lógica para eliminar el registro en la posición `index` de la matriz `registros`
+      this.registros.splice(index, 1); // Elimina el registro en la posición `index`
+    }
+
     
 
   }

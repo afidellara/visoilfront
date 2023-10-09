@@ -35,6 +35,8 @@
             <td>{{ registro.descripcion }}</td>
             <td class="text-center">
               <a (click)="abrirModal(i)" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" data-bs-whatever="@mdo" class="btnEditar btn btn-primary">Editar</a>
+              <a (click)="eliminarRegistro(i)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">Borrar</a>
+
             </td>
           </tr>
         </tbody>
