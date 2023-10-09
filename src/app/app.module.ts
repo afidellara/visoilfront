@@ -23,6 +23,7 @@ import { ConsultaServiComponent } from './components/servicio/consulta-servi/con
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

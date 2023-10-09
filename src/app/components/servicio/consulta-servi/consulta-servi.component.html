@@ -28,14 +28,46 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let registro of registros">
+          <tr *ngFor="let registro of registros; let i = index">
             <td>{{ registro.cliente }}</td>
             <td>{{ registro.costo }}</td>
             <td>{{ registro.fechaPedido }}</td>
             <td>{{ registro.descripcion }}</td>
+            <td class="text-center">
+              <a (click)="abrirModal(i)" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" data-bs-whatever="@mdo" class="btnEditar btn btn-primary">Editar</a>
+            </td>
           </tr>
         </tbody>
       </table>
+
+      <div *ngFor="let registro of registros; let i = index">
+        <div class="modal fade" [id]="'exampleModal' + i" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ingrese los Datos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <label for="recipient-name" class="col-form-label">Cliente:</label>
+                  <input type="text" class="form-control" id="cliente" name="cliente" [(ngModel)]="registroSeleccionado.cliente">
+                  <label for="recipient-name" class="col-form-label">Costo:</label>
+                  <input type="text" class="form-control" id="costo" name="costo"  [(ngModel)]="registroSeleccionado.costo">
+                  <label for="recipient-name" class="col-form-label">Fecha Pedido:</label>
+                  <input type="text" class="form-control" id="fechape" name="fechaPedido" [(ngModel)]="registroSeleccionado.fechaPedido">
+                  <label for="recipient-name" class="col-form-label">Descripcion:</label>
+                  <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="registroSeleccionado.descripcion">
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btnG btn btn-light" data-bs-dismiss="modal" id="btnS">Guardar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   
