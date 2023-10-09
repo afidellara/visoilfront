@@ -29,8 +29,6 @@
     }
 
     abrirModal(index: number) {
-      // Asigna el registro actualmente seleccionado
-      this.registroSeleccionado = this.registros[index];
       // Asegúrate de que `registroSeleccionado` se haya inicializado correctamente
       console.log(this.registroSeleccionado);
       this.modalesAbiertos[index] = true;
@@ -47,6 +45,9 @@
       this.registros.splice(index, 1); // Elimina el registro en la posición `index`
     }
 
-    
+    editarRegistros(index: number) {
+      this.registros[index] = { ...this.registroSeleccionado };
+      this.cerrarModal(index); // Cierra el modal después de guardar
+    }
 
   }
