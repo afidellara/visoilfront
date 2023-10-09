@@ -22,7 +22,7 @@ import { RegistroServiComponent } from './components/servicio/registro-servi/reg
 import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
-
+import { ClienteService } from './service/ClienteService.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +51,7 @@ import { FormularioServiComponent } from './components/servicio/formulario-servi
     FontAwesomeModule,
     BrowserAnimationsModule
   ],
-  providers: [ClienteAuthService, ProductoService,provideToastr(),provideAnimations()],
+  providers: [ClienteAuthService, ProductoService,ClienteService ,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
