@@ -97,3 +97,70 @@ body {
 .table {
     margin-top:25px;
 }
+
+.filtro {
+  justify-content: space-between;
+  align-items: center;  
+}
+  
+.filtro .input-box {
+    display: inline-block;
+    margin-right: 10px;
+}
+    
+.filtro .button {
+    display: inline-block;
+}
+
+select {
+    width:120px; 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    color: #333; 
+    border-color: #75bdbd;
+  }
+  
+  select:focus {
+    outline: none; 
+    border-color: #007bff; 
+  }
+  
+  select option {
+    background-color: #fff; 
+    color: #333; 
+  }
+  
+  select option:hover {
+    background-color: #f0f0f0; 
+  }
+  
+  .container form .user-details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: calc(1000px / 2 -20px);
+}
+
+.user-details .input-box .details{
+    display: block;
+    font-weight: 100;
+    margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+    height: 45px;
+    width: 250px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #75bdbd;
+    padding-left: 15px;
+    font-size: 16px;
+}

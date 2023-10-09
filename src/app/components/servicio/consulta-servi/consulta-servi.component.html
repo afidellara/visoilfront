@@ -1,9 +1,22 @@
 <div class="container">
     <div class="user-details">
       <div class="title"> Consultar Servicio </div>
-      <div class="button">
-        <input type="button" class="btt" (click)="agregarRegistros()" value="Visualizar">
+      <div class="filtro">
+        <div class="input-box">
+          <input type="text" placeholder="Digite el filtro" required>
+        </div>
+        <div class="input-box">
+          <select>
+            <option value="opcion1">Cliente</option>
+            <option value="opcion2">Pedido</option>
+            <option value="opcion3">Costo</option>
+          </select>
+        </div>
+        <div class="button">
+          <input type="button" class="btt" (click)="agregarRegistros()" value="Visualizar">
+        </div>
       </div>
+      
       <table class="content-table" id="table">
         <thead>
           <tr>
@@ -11,6 +24,7 @@
             <th scope="col">Costo</th>
             <th scope="col">FechaPedido</th>
             <th scope="col">Descripcion</th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
