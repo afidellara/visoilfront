@@ -19,7 +19,7 @@ export class FormularioProductoComponent {
       precio:0,
       categoria:'',
       referencia:'',
-      imagen:'',
+      imagen:null,
       tela:'',
       talla:'',
       medida:'',
@@ -33,10 +33,10 @@ export class FormularioProductoComponent {
       this.productoService.registrarProdcuto(value).subscribe(
         (data) => {
           this.route.navigate(['/tablaproducts']);
-          console.log(data);
+          console.log(value);
         },
         (error) => {
-          console.log('No se puedo agregar el administrador ' + error);
+          console.log('No se puedo agregar el producto ' + error);
         }
       );
       console.log('PRODUCTO REGISTRADO');
