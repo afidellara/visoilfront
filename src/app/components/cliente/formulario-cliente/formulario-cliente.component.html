@@ -13,7 +13,7 @@
           <select
             id="tipoDocumento"
             name="tipoDocumento"
-            [(ngModel)]="cliente.ciudad"
+            [(ngModel)]="cliente.tipoDocumento"
             required
           >
             <option selected>Opciones</option>
@@ -64,6 +64,7 @@
             type="radio"
             name="genero"
             id="masculino"
+            value="Masculino"
             [(ngModel)]="cliente.genero"
           />
           <label for="masculino">Masculino</label>
@@ -71,6 +72,7 @@
             type="radio"
             name="genero"
             id="femenino"
+            value="Femenino"
             [(ngModel)]="cliente.genero"
           />
           <label for="femenino">Femenino</label>
@@ -78,6 +80,7 @@
             type="radio"
             name="genero"
             id="otro"
+            value="Otro"
             [(ngModel)]="cliente.genero"
           />
           <label for="otro">Otro</label>
@@ -85,6 +88,7 @@
             type="radio"
             name="genero"
             id="noEspecificado"
+            value="No especificado"
             [(ngModel)]="cliente.genero"
           />
           <label for="noEspecificado">No especificado</label>
@@ -104,8 +108,8 @@
         <label for="correoElectronico">Correo Electrónico</label>
         <input
           type="email"
-          id="correoElectronico"
-          name="correoElectronico"
+          id="correo"
+          name="correo"
           placeholder="Correo Electrónico"
           required
           [(ngModel)]="cliente.correo"
@@ -115,8 +119,8 @@
         <label for="contraseña">Contraseña</label>
         <input
           type="password"
-          id="contraseña"
-          name="contraseña"
+          id="pass"
+          name="pass"
           placeholder="Contraseña"
           required
           [(ngModel)]="cliente.pass"
@@ -126,8 +130,8 @@
         <label for="numeroTelefono">Número de Teléfono</label>
         <input
           type="tel"
-          id="numeroTelefono"
-          name="numeroTelefono"
+          id="telefono"
+          name="telefono"
           placeholder="Número de Teléfono"
           [(ngModel)]="cliente.telefono"
         />

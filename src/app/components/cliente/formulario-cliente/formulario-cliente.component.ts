@@ -32,6 +32,7 @@ export class FormularioClienteComponent {
   constructor(private clienteService: ClienteService, private route: Router) {}
 
   registrarCliente({ value }: { value: any }) {
+    
     this.clienteService.registrarCliente(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
