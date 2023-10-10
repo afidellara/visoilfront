@@ -1,17 +1,15 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Cliente } from 'src/app/models/Cliente.model';
-import { ClienteService } from 'src/app/service/ClienteService.service';
+import { Cliente } from '../../../models/Cliente.model';
+import { ClienteService } from '../../../service/ClienteService.service';
 
-/**
- * @title Basic select
- */
 
 @Component({
   selector: 'app-formulario-cliente',
   templateUrl: './formulario-cliente.component.html',
   styleUrls: ['./formulario-cliente.component.css'],
 })
+
 @Injectable()
 export class FormularioClienteComponent {
   cliente: Cliente = {

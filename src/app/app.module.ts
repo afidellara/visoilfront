@@ -7,7 +7,6 @@ import { MenuComponent } from './components/menu/menu.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { GaleriaComponent } from './components/galeria/galeria.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { PruebaComponent } from './components/prueba/prueba.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -23,6 +22,8 @@ import { ConsultaServiComponent } from './components/servicio/consulta-servi/con
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
 import { ClienteService } from './service/ClienteService.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
 
 @NgModule({
   declarations: [
@@ -39,17 +40,18 @@ import { ClienteService } from './service/ClienteService.service';
     RegistroServiComponent,
     ConsultaServiComponent,
     FormularioServiComponent,
+    FormularioClienteComponent
    
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastrModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     FontAwesomeModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [ClienteAuthService, ProductoService,ClienteService ,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
