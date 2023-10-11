@@ -24,6 +24,7 @@ import { FormularioServiComponent } from './components/servicio/formulario-servi
 import { ClienteService } from './service/ClienteService.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioClienteComponent } from './components/cliente/formulario-cliente/formulario-cliente.component';
+import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { FormularioClienteComponent } from './components/cliente/formulario-clie
     RegistroServiComponent,
     ConsultaServiComponent,
     FormularioServiComponent,
-    FormularioClienteComponent
+    FormularioClienteComponent,
+    TablaClientesComponent
    
   ],
   imports: [
