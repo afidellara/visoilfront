@@ -21,9 +21,9 @@ export class ConsultaServiComponent {
       this.registros = [];
     } else {
       this.registros.push(
-        { cliente: 'Cliente 1', costo: '$100.00', fechaPedido: '2023-10-10', descripcion: 'Descripción del pedido 1' },
-        { cliente: 'Cliente 2', costo: '$75.50', fechaPedido: '2023-10-15', descripcion: 'Descripción del pedido 2' },
-        { cliente: 'Cliente 3', costo: '$200.25', fechaPedido: '2023-10-20', descripcion: 'Descripción del pedido 3' } // Agrega más registros según sea necesario
+        { cedula: '123', nombre: 'Jesus', tipoServicio: 'Servicio 1', estado: 'Pendiente', fechaPedido:'2021-08-08' },
+        { cedula: '321', nombre: 'Stefani', tipoServicio: 'Servicio 2', estado: 'Pagado', fechaPedido:'2021-12-01' },
+        { cedula: '113', nombre: 'Alejandro', tipoServicio: 'Servicio 3', estado: 'Pendiente', fechaPedido:'2021-03-22' }
       );
     }
   }
@@ -54,10 +54,12 @@ export class ConsultaServiComponent {
 
   guardarCambios(index: number) {
     // Actualiza los valores del registro seleccionado en la matriz de registros
-    this.registros[index].cliente = this.registroSeleccionado.cliente;
-    this.registros[index].costo = this.registroSeleccionado.costo;
+    this.registros[index].cedula = this.registroSeleccionado.cedula;
+    this.registros[index].nombre = this.registroSeleccionado.nombre;
+    this.registros[index].tipoServicio = this.registroSeleccionado.tipoServicio;
+    this.registros[index].estado = this.registroSeleccionado.estado;
     this.registros[index].fechaPedido = this.registroSeleccionado.fechaPedido;
-    this.registros[index].descripcion = this.registroSeleccionado.descripcion;
+
 
     this.cerrarModal(index, true); // Cierra el modal después de guardar
   }
