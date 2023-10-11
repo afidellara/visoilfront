@@ -158,6 +158,53 @@ body{
   background: #43ef8b;
   color: #fff;
 }
+
+.estam ::selection,
+.estam .price-area,
+.estam .inner-area{
+  background: #f06d63;
+}
+.estam .btn button{
+  border: 2px solid #f06d63;
+  color: #f06d63;
+  background: #fff;
+}
+.estam .btn button:hover{
+  background: #f06d63;
+  color: #fff;
+}
+
+.confesion ::selection,
+.confesion .price-area,
+.confesion .inner-area{
+  background: #8097ff;
+}
+.confesion .btn button{
+  border: 2px solid #8097ff;
+  color: #8097ff;
+  background: #fff;
+}
+.confesion .btn button:hover{
+  background: #8097ff;
+  color: #fff;
+}
+
+.cortes ::selection,
+.cortes .price-area,
+.cortes .inner-area{
+  background: #f46ff8;
+}
+.cortes .btn button{
+  border: 2px solid #f46ff8;
+  color: #f46ff8;
+  background: #fff;
+}
+.cortes .btn button:hover{
+  background: #f46ff8;
+  color: #fff;
+}
+
+
 .basic .package-name{
   background: #ffecb3;
 }
@@ -167,17 +214,48 @@ body{
 .ultimate .package-name{
   background: #baf8d4;
 }
+.estam .package-name{
+  background: #f06d63;
+}
+
+.confesion .package-name{
+  background: #8097ff;
+}
+
+.cortes .package-name{
+  background: #f46ff8;
+}
+
 .basic .package-name::before{
-  content: "Basic";
+  content: "Corte Vinillo";
+  font-size: 16px;
 }
 .premium .package-name::before{
-  content: "Premium";
-  font-size: 24px;
+  content: "Tejido Industrial";
+  font-size: 16px;
+  text-align: center;
 }
 .ultimate .package-name::before{
-  content: "Ultimate";
-  font-size: 24px;
+  content: "Sublimacion Textil";
+  font-size: 16px;
+  text-align: center;
 }
+.estam .package-name::before{
+  content: "Estampado";
+  font-size: 16px;
+  text-align: center;
+}
+.confesion .package-name::before{
+  content: "Confeccion";
+  font-size: 16px;
+  text-align: center;
+}
+.cortes .package-name::before{
+  content: "Corte";
+  font-size: 16px;
+  text-align: center;
+}
+
 @media (max-width: 1020px) {
   .wrapper .table{
     width: calc(50% - 20px);
