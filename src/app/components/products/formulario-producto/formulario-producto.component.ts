@@ -2,6 +2,7 @@ import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/Producto.model';
 import { ProductoService } from 'src/app/service/ProductoService.service';
+//import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-formulario-producto',
@@ -39,8 +40,11 @@ export class FormularioProductoComponent {
           console.log('No se puedo agregar el producto ' + error);
         }
       );
+     // this.toastr.success('Inicio de sesión exitoso', 'Cliente logueado');
       console.log('PRODUCTO REGISTRADO');
 
 }
+
+ 
 
 }
