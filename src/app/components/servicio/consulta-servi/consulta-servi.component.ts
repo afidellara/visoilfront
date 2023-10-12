@@ -48,9 +48,17 @@ export class ConsultaServiComponent {
   }
 
   eliminarRegistro(index: number) {
-    // Aquí puedes implementar la lógica para eliminar el registro en la posición `index` de la matriz `registros`
-    this.registros.splice(index, 1); // Elimina el registro en la posición `index`
+    // Preguntar al usuario si está seguro de eliminar el registro
+    const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este registro?');
+  
+    if (confirmacion) {
+      // Elimina el registro si el usuario confirma
+      this.registros.splice(index, 1);
+    } else {
+      // No hagas nada si el usuario cancela la eliminación
+    }
   }
+  
 
   guardarCambios(index: number) {
     // Actualiza los valores del registro seleccionado en la matriz de registros

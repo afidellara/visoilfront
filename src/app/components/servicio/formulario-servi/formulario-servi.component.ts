@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./formulario-servi.component.css']
 })
 export class FormularioServiComponent {
+  selectedProduct: string = 'opcion1'; // Propiedad para almacenar la opción seleccionada
+
+  onProductSelected(event: any) {
+    this.selectedProduct = event.target.value;
+  }
 
 }
