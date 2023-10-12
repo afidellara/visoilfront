@@ -1,26 +1,27 @@
 body {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
   background: white;
 }
 
 .container {
-  margin-top: 55px;
-  width: 850px;
+  margin-top: 20px;
+  width: 100%;
+  min-width: 850px;
   background: white;
-  padding: 25px 30px;
+  padding: 15px;
   border-radius: 5px;
-  box-shadow: 7px 13px 90px #7bc4c4;
+  box-shadow: 7px 13px 20px #7bc4c4;
 }
 
 .container .title {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 500;
   position: relative;
   font-weight: bold;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .container .title::before {
@@ -29,17 +30,17 @@ body {
   left: 0;
   bottom: 0;
   height: 3px;
-  width: 200px;
-  box-shadow: 7px 13px 90px #7bc4c4;
+  width: 50%;
+  box-shadow: 7px 13px 20px #7bc4c4;
 }
 
 .btt {
-  height: 45px;
-  width: 100px;
+  height: 35px;
+  width: 90px;
   outline: none;
   color: #fff;
   border: none;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 1px;
   border-radius: 5px;
   background: #7bc4c4;
@@ -51,12 +52,11 @@ body {
 
 .content-table {
   border-collapse: collapse;
-  margin: 25px 0;
   font-size: 0.9em;
-  min-width: 700px;
+  width: 100%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
 }
 
 .content-table thead tr {
@@ -68,7 +68,7 @@ body {
 
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: 10px 15px;
   text-align: center;
 }
 
@@ -91,27 +91,34 @@ body {
 }
 
 .table {
-  margin-top: 25px;
+  margin-top: 20px;
 }
 
 .filtro {
+  display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 .filtro .input-box {
-  display: inline-block;
-  margin-right: 10px;
+  margin-bottom: 10px;
+  flex: 1;
 }
 
 .filtro .button {
-  display: inline-block;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 select {
-  width: 120px;
-  padding: 10px;
-  font-size: 16px;
+  width: 100%;
+  max-width: 250px;
+  height: 35px;
+  font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #fff;
@@ -137,12 +144,13 @@ select option:hover {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 20px 0 12px 0;
+  margin: 10px 0 12px 0;
 }
 
 form .user-details .input-box {
-  margin-bottom: 15px;
-  width: calc(1000px / 2 -20px);
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .user-details .input-box .details {
@@ -152,17 +160,46 @@ form .user-details .input-box {
 }
 
 .user-details .input-box input {
-  height: 45px;
-  width: 250px;
+  height: 35px;
+  width: 100%;
+  max-width: 250px;
   outline: none;
   border-radius: 5px;
   border: 1px solid #75bdbd;
   padding-left: 15px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
-@media(max-width: 600px){
-  .container{
-      min-width: 280px;
+/* Estilos para dispositivos móviles */
+@media (max-width: 600px) {
+  /* Contenedor principal */
+  .container {
+    padding: 10px;
+  }
+
+  /* Tabla */
+  .content-table {
+    font-size: 0.85em;
+  }
+
+  /* Ajuste de ancho para el contenido de la tabla */
+  .content-table th,
+  .content-table td {
+    padding: 5px 10px;
+  }
+
+  /* Fila impares con un fondo ligeramente diferente */
+  .content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+
+  /* Ajuste de ancho para la selección */
+  select {
+    max-width: 100%;
+  }
+
+  .filtro .button {
+    text-align: center; /* Centrar el botón */
+    width: 100%; /* Utilizar todo el ancho disponible */
   }
 }
