@@ -10,6 +10,7 @@ import { TablaProductosComponent } from './components/products/tabla-productos/t
 import { RegistroServiComponent } from './components/servicio/registro-servi/registro-servi.component';
 import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
+import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 
 
 
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path: 'registrarServi', component:RegistroServiComponent},
   {path: 'consultarServi', component:ConsultaServiComponent},
   {path: 'formularioServi', component:FormularioServiComponent},
+  {path: 'consultarproductos', component:ConsultarProductosComponent},
 
   
   {path: 'prueba', component:PruebaComponent},
