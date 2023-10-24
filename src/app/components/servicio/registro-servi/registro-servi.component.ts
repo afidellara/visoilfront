@@ -17,5 +17,7 @@ export class RegistroServiComponent {
   solicitarOpcion() {
     this.router.navigate(['/formularioServi']);
   }
+
+
 }
 
