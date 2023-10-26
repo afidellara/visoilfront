@@ -6,9 +6,11 @@ export class Cofeccion{
     tipoTela: String;
     cantidad: Number;
     tipo: String;
+    cedula:String;
+    nombre:String;
 
     constructor(id:String, imagen:String, descripcion:String,abjuntas:String, tipoTela:String,
-        cantidad:Number,tipo:String){
+        cantidad:Number,tipo:String,cedula:String,nombre:String){
             this.id=id
             this.imagen=imagen
             this.descripcion=descripcion
@@ -16,6 +18,8 @@ export class Cofeccion{
             this.tipoTela = tipoTela
             this.cantidad = cantidad
             this.tipo = tipo
+            this.cedula = cedula
+            this.nombre = nombre
     }
 
 }
