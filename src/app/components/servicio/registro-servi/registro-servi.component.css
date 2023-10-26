@@ -10,8 +10,9 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 90vh;
   padding: 20px;
+  overflow-y: auto;
+  max-height: 85vh; 
 }
 .wrapper{
   max-width: 1090px;
@@ -31,21 +32,19 @@ body{
 
 }
 .table .price-section{
-  display: flex;
-  justify-content: center;
+  margin-left: 30px;
 }
 .table .price-area{
-  height: 120px;
-  width: 120px;
-  border-radius: 50%;
+  height: 145px;
+  width: 224px;
+  border-radius: 10px;
   padding: 2px;
 }
 .price-area .inner-area{
   height: 100%;
-  width: 100%;
-  border-radius: 50%;
+  width: 220px;
+  border-radius: 10px;
   border: 3px solid #fff;
-  line-height: 117px;
   text-align: center;
   color: #fff;
   position: relative;
@@ -61,6 +60,13 @@ body{
   font-size: 40px;
   font-weight: 500;
   margin-left: 16px;
+}
+
+.price-area .inner-area .logo{
+    margin-top: 1px ;
+    border-radius: 5px;
+    max-width: 180px; /* Cambia el valor según tus necesidades */
+    height: auto;     /* Mantiene la relación de aspecto */
 }
 .table .package-name{
   width: 100%;

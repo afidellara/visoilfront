@@ -1,4 +1,5 @@
 <body>
+<div *ngIf="mostrarLogin()">
 
     <section class="d-flex">
       <section id="sidebar-container" class="bg-primary">
@@ -6,11 +7,17 @@
       </section>    
     <section class="w-100">
        <app-nav></app-nav>
-        <section class="contenedor" id="cont">
-            <router-outlet></router-outlet>
+      <section class="contenedor" id="cont">
+   
+  <router-outlet></router-outlet>
+
         </section>
       </section>
     </section>
+  </div>
+    <div *ngIf="!mostrarLogin()">
+      <app-login></app-login>
+    </div>
   
   </body>
   

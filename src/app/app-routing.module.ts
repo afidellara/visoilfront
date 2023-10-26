@@ -11,21 +11,20 @@ import { RegistroServiComponent } from './components/servicio/registro-servi/reg
 import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
+import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
 
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
-  {path: 'registerproducts', component:FormularioProductoComponent},
-  {path: 'tablaproducts', component:TablaProductosComponent},
-  {path: 'registrarcliente', component:FormularioClienteComponent},
-  {path: 'consultarclientes', component:TablaClientesComponent},
-  {path: 'registrarServi', component:RegistroServiComponent},
-  {path: 'consultarServi', component:ConsultaServiComponent},
-  {path: 'formularioServi', component:FormularioServiComponent},
-  {path: 'consultarproductos', component:ConsultarProductosComponent},
-
-  
+  {path: 'registerproducts', component:FormularioProductoComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'tablaproducts', component:TablaProductosComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'registrarcliente', component:FormularioClienteComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'consultarclientes', component:TablaClientesComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'registrarServi', component:RegistroServiComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'consultarServi', component:ConsultaServiComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'formularioServi', component:FormularioServiComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'consultarproductos', component:ConsultarProductosComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
