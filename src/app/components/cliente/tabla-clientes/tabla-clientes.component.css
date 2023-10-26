@@ -6,41 +6,42 @@ body {
   background: white;
 }
 
-.container {
-  margin-top: 20px;
-  width: 100%;
-  min-width: 850px;
+.container{
+  margin-top: 55px;
+  width: 850px;
   background: white;
-  padding: 15px;
+  padding: 25px 30px;
   border-radius: 5px;
-  box-shadow: 7px 13px 20px #7bc4c4;
+  box-shadow: 7px 13px 90px #7bc4c4;
+
 }
 
 .container .title {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   position: relative;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.container .title::before {
-  content: "";
+.container .title::before{
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
   height: 3px;
-  width: 50%;
-  box-shadow: 7px 13px 20px #7bc4c4;
+  width: 200px;
+  box-shadow: 7px 13px 90px #7bc4c4;
 }
 
-.btt {
-  height: 35px;
-  width: 90px;
+
+.btt{
+  height: 45px;
+  width: 100px;
   outline: none;
   color: #fff;
   border: none;
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 1px;
   border-radius: 5px;
   background: #7bc4c4;
@@ -50,17 +51,40 @@ body {
   background: #98c9c9;
 }
 
+::-webkit-scrollbar{
+  width: 12px;
+  height: 16px;
+}
+
+::-webkit-scrollbar-track{
+  background: none;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #7bc4c4;
+  border-radius: 10px;
+}
+
+
+
+.tabla-container{
+  width: 760px;
+  overflow-x: auto;
+  border-radius: 5px 5px 0 0;
+}
+
 .content-table {
   border-collapse: collapse;
+  margin: 25px 0;
   font-size: 0.9em;
-  width: 100%;
+  min-width: 700px;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 .content-table thead tr {
-  background-color: #7bc4c4;
+  background-color:  #7bc4c4;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
@@ -68,13 +92,13 @@ body {
 
 .content-table th,
 .content-table td {
-  padding: 10px 15px;
-  text-align: center;
+padding: 12px 15px;
+text-align: center;
 }
 
 .content-table tbody tr {
   border-bottom: 1px solid #dddddd;
-  color: black;
+  color: black
 }
 
 .content-table tbody tr:nth-of-type(even) {
@@ -82,124 +106,83 @@ body {
 }
 
 .content-table tbody tr:last-of-type {
-  border-bottom: 2px solid #7bc4c4;
+  border-bottom: 2px solid #7bc4c4;;
 }
 
 .content-table tbody tr.active-row {
   font-weight: bold;
-  color: #7bc4c4;
+  color:  #7bc4c4;;
 }
 
 .table {
-  margin-top: 20px;
+  margin-top:25px;
 }
 
+
+
 .filtro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  margin-bottom: 20px;
+justify-content: space-between;
+align-items: center;  
 }
 
 .filtro .input-box {
-  margin-bottom: 10px;
-  flex: 1;
+  display: inline-block;
+  margin-right: 10px;
 }
-
+  
 .filtro .button {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  display: inline-block;
 }
 
 select {
-  width: 100%;
-  max-width: 250px;
-  height: 35px;
-  font-size: 14px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
-  color: #333;
+  width:120px; 
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  background-color: #fff; 
+  color: #333; 
   border-color: #75bdbd;
 }
 
 select:focus {
-  outline: none;
-  border-color: #007bff;
+  outline: none; 
+  border-color: #007bff; 
 }
 
 select option {
-  background-color: #fff;
-  color: #333;
+  background-color: #fff; 
+  color: #333; 
 }
 
 select option:hover {
-  background-color: #f0f0f0;
+  background-color: #f0f0f0; 
 }
 
-.container form .user-details {
+.container form .user-details{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 10px 0 12px 0;
+  margin: 20px 0 12px 0;
 }
 
-form .user-details .input-box {
-  margin-bottom: 10px;
-  width: 100%;
-  max-width: 400px;
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(1000px / 2 -20px);
 }
 
-.user-details .input-box .details {
+.user-details .input-box .details{
   display: block;
   font-weight: 100;
   margin-bottom: 5px;
 }
 
-.user-details .input-box input {
-  height: 35px;
-  width: 100%;
-  max-width: 250px;
+.user-details .input-box input{
+  height: 45px;
+  width: 250px;
   outline: none;
   border-radius: 5px;
   border: 1px solid #75bdbd;
   padding-left: 15px;
-  font-size: 14px;
-}
-
-/* Estilos para dispositivos móviles */
-@media (max-width: 600px) {
-  /* Contenedor principal */
-  .container {
-    padding: 10px;
-  }
-
-  /* Tabla */
-  .content-table {
-    font-size: 0.85em;
-  }
-
-  /* Ajuste de ancho para el contenido de la tabla */
-  .content-table th,
-  .content-table td {
-    padding: 5px 10px;
-  }
-
-  /* Fila impares con un fondo ligeramente diferente */
-  .content-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-  }
-
-  /* Ajuste de ancho para la selección */
-  select {
-    max-width: 100%;
-  }
-
-  .filtro .button {
-    text-align: center; /* Centrar el botón */
-    width: 100%; /* Utilizar todo el ancho disponible */
-  }
+  font-size: 16px;
 }
