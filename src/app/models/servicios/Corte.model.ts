@@ -7,8 +7,10 @@ export class Corte{
   descripcion: String;
   imagen: String;
   tipo: String;
+  cedula:String;
+  nombre:String;
 
-  constructor(id:String, piezaCorte:String, tela:String, cantidad:Number, descripcion:String,imagen:String,tipo:String){
+  constructor(id:String, piezaCorte:String, tela:String, cantidad:Number, descripcion:String,imagen:String,tipo:String,cedula:String,nombre:String){
 
     this.id = id
     this.piezaCorte=piezaCorte
@@ -17,6 +19,8 @@ export class Corte{
     this.descripcion=descripcion
     this.imagen=imagen
     this.tipo=tipo
+    this.cedula = cedula
+    this.nombre = nombre
     
   }
 }
