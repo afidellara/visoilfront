@@ -15,4 +15,6 @@ export class ClienteService{
     registrarCliente(cliente: Cliente): Observable<any>{
         return this.http.post(this.url+"registrarcliente", cliente); 
     }
+
+    
 }
