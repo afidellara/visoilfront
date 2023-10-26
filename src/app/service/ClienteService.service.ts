@@ -12,9 +12,24 @@ export class ClienteService{
 
     }
 
-    registrarCliente(cliente: Cliente): Observable<any>{
-        return this.http.post(this.url+"registrarcliente", cliente); 
-    }
-
+    registrarCliente(cliente: Cliente): Observable<any> {
+        return this.http.post(this.url + 'registrarcliente', cliente);
+      }
+    
+      getCliente(): Observable<any> {
+        return this.http.get(this.url + 'Cliente');
+      }
+    
+      eliminarCliente(cedula: string): Observable<any> {
+        return this.http.delete(this.url + 'Cliente/' + cedula);
+      }
+    
+      obtenerCliente(cedula: string): Observable<any> {
+        return this.http.get(this.url + 'Cliente/' + cedula);
+      }
+    
+      modificarCliente(cedula: String, Cliente: Cliente): Observable<any> {
+        return this.http.put(this.url + 'Cliente/' + cedula, Cliente);
+      }
     
 }
