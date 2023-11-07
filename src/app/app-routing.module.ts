@@ -12,19 +12,20 @@ import { ConsultaServiComponent } from './components/servicio/consulta-servi/con
 import { FormularioServiComponent } from './components/servicio/formulario-servi/formulario-servi.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
+import { ProductosGuard } from './guard/ProductosGuard.guard';
 
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
-  {path: 'registerproducts', component:FormularioProductoComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'registerproducts', component:FormularioProductoComponent,canActivate:[IniciarSesionClienteGuard, ProductosGuard]},
   {path: 'tablaproducts', component:TablaProductosComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'registrarcliente', component:FormularioClienteComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'consultarclientes', component:TablaClientesComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'registrarServi', component:RegistroServiComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'consultarServi', component:ConsultaServiComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'formularioServi', component:FormularioServiComponent,canActivate:[IniciarSesionClienteGuard]},
-  {path: 'consultarproductos', component:ConsultarProductosComponent,canActivate:[IniciarSesionClienteGuard]},
+  {path: 'consultarproductos', component:ConsultarProductosComponent,canActivate:[IniciarSesionClienteGuard, ProductosGuard]},
   {path: 'prueba', component:PruebaComponent},
   {path: '**', redirectTo: '', pathMatch: 'full'}
 ];
