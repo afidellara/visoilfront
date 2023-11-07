@@ -8,11 +8,12 @@ body {
 
 .container{
     margin-top: 55px;
-    width: 95%;
+    width: 850px;
     background: white;
     padding: 25px 30px;
     border-radius: 5px;
     box-shadow: 7px 13px 90px #7bc4c4;
+
 }
 
 .container .title {
@@ -52,11 +53,31 @@ body {
 
 }
 
+::-webkit-scrollbar{
+    width: 12px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track{
+    background: none;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #7bc4c4;
+    border-radius: 10px;
+}
+
+
+
+.tabla-container{
+    width: 760px;
+    overflow-x: auto;
+    border-radius: 5px 5px 0 0;
+}
 
 .content-table {
     border-collapse: collapse;
     margin: 25px 0;
-    width: 100%;
     font-size: 0.9em;
     min-width: 700px;
     border-radius: 5px 5px 0 0;
