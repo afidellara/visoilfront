@@ -27,6 +27,8 @@ import { FormularioClienteComponent } from './components/cliente/formulario-clie
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
+import { AdministradorAuthService } from './service/AdministradorAuthService.service';
+import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,7 @@ import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.gua
     BrowserAnimationsModule,
     ToastrModule.forRoot()
   ],
-  providers: [ClienteAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
+  providers: [ClienteAuthService,AdministradorAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,IniciarSesionAdmGuard,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

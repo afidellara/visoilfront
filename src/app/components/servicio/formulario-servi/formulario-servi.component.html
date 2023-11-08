@@ -15,7 +15,7 @@
             </select>
         </div>
     </div>
-    
+
     <form action="#">
         <div class="user-details">
             <div class="input-box">
@@ -32,11 +32,12 @@
             </div>
             <div class="input-box">
                 <span class="details">
-                    Descripcion 
+                    Descripcion
                 </span>
                 <input type="text" placeholder="Digite la descripcion" required>
             </div>
-            <ng-container *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2' || selectedProduct === 'opcion3' || selectedProduct === 'opcion4'">
+            <ng-container
+                *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2' || selectedProduct === 'opcion3' || selectedProduct === 'opcion4'">
                 <div class="filed">
                     <span class="details">
                         Imagen del producto
@@ -47,9 +48,10 @@
                         </label>
                         <input id="file-input" type="file" class="imgg" required>
                     </div>
-                </div> 
+                </div>
             </ng-container>
-            <ng-container *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2'">
+            <ng-container
+                *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2'">
                 <div class="input-box">
                     <span class="details">
                         Texto
@@ -63,19 +65,21 @@
                     <input type="text" placeholder="Digite el color" required>
                 </div>
             </ng-container>
-        
+
             <div class="input-box" *ngIf="selectedProduct === 'opcion1'">
                 <span class="details">
                     Tamaño
                 </span>
                 <input type="text" placeholder="Digite tamaño" required>
             </div>
-            <ng-container *ngIf="selectedProduct === 'opcion5' || selectedProduct === 'opcion6'">
+            <ng-container
+                *ngIf="selectedProduct === 'opcion5' || selectedProduct === 'opcion6'">
                 <div class="input-box">
                     <span class="details">
                         Tipo Tela
                     </span>
-                    <input type="text" placeholder="Digite tipo de tela" required>
+                    <input type="text" placeholder="Digite tipo de tela"
+                        required>
                 </div>
                 <div class="input-box">
                     <span class="details">
@@ -87,7 +91,8 @@
                     <span class="details">
                         Pieza Corte
                     </span>
-                    <input type="text" placeholder="Digite pieza a cortar" required>
+                    <input type="text" placeholder="Digite pieza a cortar"
+                        required>
                 </div>
             </ng-container>
         </div>
