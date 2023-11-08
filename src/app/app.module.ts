@@ -16,7 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
 import { ProductoService } from './service/ProductoService.service';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
-import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  provideAnimations,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { RegistroServiComponent } from './components/servicio/registro-servi/registro-servi.component';
 import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,6 +30,12 @@ import { FormularioClienteComponent } from './components/cliente/formulario-clie
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
+import { CofeccionService } from './service/Servicios/CofeccionService.service';
+import { CorteService } from './service/Servicios/CorteService.service';
+import { EstampadoService } from './service/Servicios/EstampadoService.service';
+import { SublimacionTextilService } from './service/Servicios/SublimacionTextil.service';
+import { CorteVinilloService } from './service/Servicios/CorteVinillo.service';
+import { TejidoIndustrialService } from './service/Servicios/TejidoIndustrialService.service';
 
 @NgModule({
   declarations: [
@@ -45,8 +54,7 @@ import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.gua
     FormularioServiComponent,
     FormularioClienteComponent,
     TablaClientesComponent,
-    ConsultarProductosComponent
-   
+    ConsultarProductosComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,9 +64,22 @@ import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.gua
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
-  providers: [ClienteAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
+  providers: [
+    ClienteAuthService,
+    ProductoService,
+    ClienteService,
+    IniciarSesionClienteGuard,
+    CofeccionService,
+    CorteService,
+    CorteVinilloService,
+    EstampadoService,
+    SublimacionTextilService,
+    TejidoIndustrialService,
+    provideToastr(),
+    provideAnimations(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
