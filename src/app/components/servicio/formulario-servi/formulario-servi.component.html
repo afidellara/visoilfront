@@ -1,103 +1,87 @@
 <div class="container">
+  <form #serviceForm="ngForm" (submit)="registrarServicio(serviceForm)">
     <div class="user-details">
-        <div class="title"> Registro de Servicio </div>
+      <div class="title">Registro de Servicio</div>
+      <div class="input-box">
+        <span class="details"> Producto Seleccionado </span>
+        <select (change)="onProductSelected($event)" name="tipo" [(ngModel)]="servicio.tipo">
+          <option value="opcion1">Corte Vinillo</option>
+          <option value="opcion2">Tejido Industrial</option>
+          <option value="opcion3">Sublimacion Textil</option>
+          <option value="opcion4">Estampado</option>
+          <option value="opcion5">Confeccion</option>
+          <option value="opcion6">Corte</option>
+        </select>
+      </div>
+    </div>
+    <div class="user-details">
+      <div class="input-box">
+        <span class="details"> Nombre </span>
+        <input type="text" placeholder="Digite el nombre" name="nombre" [(ngModel)]="servicio.nombre" required />
+      </div>
+      <div class="input-box" *ngIf="selectedProduct === 'opcion5'">
+        <span class="details"> Adjuntas </span>
+        <input type="text" placeholder="Digite Adjunto" name="adjuntas" [(ngModel)]="servicio.adjuntas" required />
+      </div>
+      <div class="input-box">
+        <span class="details"> Descripcion </span>
+        <input type="text" placeholder="Digite la descripcion" name="descripcion" [(ngModel)]="servicio.descripcion" required />
+      </div>
+      <ng-container
+        *ngIf="
+          selectedProduct === 'opcion1' ||
+          selectedProduct === 'opcion2' ||
+          selectedProduct === 'opcion3' ||
+          selectedProduct === 'opcion4'
+        "
+      >
+        <div class="filed">
+          <span class="details"> Imagen del producto </span>
+          <div class="file-input-container">
+            <label for="file-input" class="custom-file-upload">
+              Cargar imagen
+            </label>
+            <input id="file-input" type="file" class="imgg" name="imagen" />
+          </div>
+        </div>
+      </ng-container>
+      <ng-container
+        *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2'"
+      >
         <div class="input-box">
-            <span class="details">
-                Producto Seleccionado
-            </span>
-            <select (change)="onProductSelected($event)">
-                <option value="opcion1">Corte Vinillo</option>
-                <option value="opcion2">Tejido Industrial</option>
-                <option value="opcion3">Sublimacion Textil</option>
-                <option value="opcion4">Estampado</option>
-                <option value="opcion5">Confeccion</option>
-                <option value="opcion6">Corte </option>
-            </select>
+          <span class="details"> Texto </span>
+          <input type="text" placeholder="Digite el texto" name="texto" [(ngModel)]="servicio.texto" required />
         </div>
+        <div class="input-box">
+          <span class="details"> Color </span>
+          <input type="text" placeholder="Digite el color" name="color" [(ngModel)]="servicio.color" required />
+        </div>
+      </ng-container>
+
+      <div class="input-box" *ngIf="selectedProduct === 'opcion1'">
+        <span class="details"> Tamaño </span>
+        <input type="text" placeholder="Digite tamaño" name="tamanio" [(ngModel)]="servicio.tamanio" required />
+      </div>
+      <ng-container
+        *ngIf="selectedProduct === 'opcion5' || selectedProduct === 'opcion6'"
+      >
+        <div class="input-box">
+          <span class="details"> Tipo Tela </span>
+          <input type="text" placeholder="Digite tipo de tela" name="tipoTela" [(ngModel)]="servicio.tipoTela" required />
+        </div>
+        <div class="input-box">
+          <span class="details"> Cantidad </span>
+          <input type="text" placeholder="Digite cantidad" name="cantidad" [(ngModel)]="servicio.cantidad" required />
+        </div>
+        <div class="input-box">
+          <span class="details"> Pieza Corte </span>
+          <input type="text" placeholder="Digite pieza a cortar" name="piezaCorte" [(ngModel)]="servicio.piezaCorte" required />
+        </div>
+      </ng-container>
     </div>
-
-    <form action="#">
-        <div class="user-details">
-            <div class="input-box">
-                <span class="details">
-                    Nombre
-                </span>
-                <input type="text" placeholder="Digite el nombre" required>
-            </div>
-            <div class="input-box" *ngIf="selectedProduct === 'opcion5'">
-                <span class="details">
-                    Adjuntas
-                </span>
-                <input type="text" placeholder="Digite Adjunto" required>
-            </div>
-            <div class="input-box">
-                <span class="details">
-                    Descripcion
-                </span>
-                <input type="text" placeholder="Digite la descripcion" required>
-            </div>
-            <ng-container
-                *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2' || selectedProduct === 'opcion3' || selectedProduct === 'opcion4'">
-                <div class="filed">
-                    <span class="details">
-                        Imagen del producto
-                    </span>
-                    <div class="file-input-container">
-                        <label for="file-input" class="custom-file-upload">
-                            Cargar imagen
-                        </label>
-                        <input id="file-input" type="file" class="imgg" required>
-                    </div>
-                </div>
-            </ng-container>
-            <ng-container
-                *ngIf="selectedProduct === 'opcion1' || selectedProduct === 'opcion2'">
-                <div class="input-box">
-                    <span class="details">
-                        Texto
-                    </span>
-                    <input type="text" placeholder="Digite el texto" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">
-                        Color
-                    </span>
-                    <input type="text" placeholder="Digite el color" required>
-                </div>
-            </ng-container>
-
-            <div class="input-box" *ngIf="selectedProduct === 'opcion1'">
-                <span class="details">
-                    Tamaño
-                </span>
-                <input type="text" placeholder="Digite tamaño" required>
-            </div>
-            <ng-container
-                *ngIf="selectedProduct === 'opcion5' || selectedProduct === 'opcion6'">
-                <div class="input-box">
-                    <span class="details">
-                        Tipo Tela
-                    </span>
-                    <input type="text" placeholder="Digite tipo de tela"
-                        required>
-                </div>
-                <div class="input-box">
-                    <span class="details">
-                        Cantidad
-                    </span>
-                    <input type="text" placeholder="Digite cantidad" required>
-                </div>
-                <div class="input-box">
-                    <span class="details">
-                        Pieza Corte
-                    </span>
-                    <input type="text" placeholder="Digite pieza a cortar"
-                        required>
-                </div>
-            </ng-container>
-        </div>
-    </form>
     <div class="button">
-        <input type="submit" class="btt" value="Registrar">
+      <input type="submit" class="btt" value="Registrar" />
     </div>
+  </form>
+
 </div>

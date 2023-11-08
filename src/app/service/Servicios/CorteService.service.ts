@@ -6,14 +6,14 @@ import { Corte } from "../../models/servicios/Corte.model";
 @Injectable()
 export class CorteService{
     
-    url: string = "http://localhost:4000/visoil/"
+    url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
     registrarCorte(corte: Corte): Observable<any>{
-        return this.http.post(this.url+"registrarcorte", corte); 
+        return this.http.post(this.url+"corte", corte); 
     }
 
     getcorte():Observable<any>{

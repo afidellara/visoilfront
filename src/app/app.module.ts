@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -16,7 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
 import { ProductoService } from './service/ProductoService.service';
 import { ToastrModule, provideToastr } from 'ngx-toastr';
-import { provideAnimations,BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  provideAnimations,
+  BrowserAnimationsModule,
+} from '@angular/platform-browser/animations';
 import { RegistroServiComponent } from './components/servicio/registro-servi/registro-servi.component';
 import { ConsultaServiComponent } from './components/servicio/consulta-servi/consulta-servi.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -27,8 +29,7 @@ import { FormularioClienteComponent } from './components/cliente/formulario-clie
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
-import { AdministradorAuthService } from './service/AdministradorAuthService.service';
-import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
+
 
 @NgModule({
   declarations: [
@@ -47,8 +48,7 @@ import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
     FormularioServiComponent,
     FormularioClienteComponent,
     TablaClientesComponent,
-    ConsultarProductosComponent
-   
+    ConsultarProductosComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,9 +58,9 @@ import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
     ReactiveFormsModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
-  providers: [ClienteAuthService,AdministradorAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,IniciarSesionAdmGuard,provideToastr(),provideAnimations()],
+  providers: [ClienteAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

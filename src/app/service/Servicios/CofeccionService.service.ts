@@ -5,32 +5,32 @@ import { Cofeccion } from "../../models/servicios/Cofeccion.model";
 
 @Injectable()
 export class CofeccionService{
-    
-    url: string = "http://localhost:4000/visoil/"
+
+    url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
     registrarCofeccion(cofeccion: Cofeccion): Observable<any>{
-        return this.http.post(this.url+"registrarcofeccion", cofeccion); 
+        return this.http.post(this.url+"confeccion", cofeccion);
     }
 
     getCofeccion():Observable<any>{
-        return this.http.get(this.url+"cofeccion"); 
+        return this.http.get(this.url+"cofeccion");
     }
 
     eliminarCofeccion(id: string):Observable<any>{
-        return this.http.delete(this.url+"cofeccion/"+id); 
+        return this.http.delete(this.url+"cofeccion/"+id);
     }
 
     obtenerCofeccion(id:string): Observable<any>{
-        return this.http.get(this.url+"cofeccion/"+id); 
+        return this.http.get(this.url+"cofeccion/"+id);
     }
 
     modificarCofeccion(id: String, cofeccion: Cofeccion): Observable<any> {
         return this.http.put(this.url + "cofeccion/" + id, cofeccion);
     }
 
-    
+
 }
