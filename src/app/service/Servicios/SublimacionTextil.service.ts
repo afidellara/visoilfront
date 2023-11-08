@@ -6,14 +6,14 @@ import { SublimacionTextil } from "../../models/servicios/SublimacionTextil.mode
 @Injectable()
 export class SublimacionTextilService{
     
-    url: string = "http://localhost:4000/visoil/"
+    url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
     registrarSublimacionTextil(sublimacionTextil: SublimacionTextil): Observable<any>{
-        return this.http.post(this.url+"registrarSublimacionTextil", sublimacionTextil); 
+        return this.http.post(this.url+"sublimacionTextil", sublimacionTextil); 
     }
 
     getSublimacionTextil():Observable<any>{

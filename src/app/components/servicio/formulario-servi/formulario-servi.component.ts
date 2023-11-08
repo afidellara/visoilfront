@@ -48,7 +48,10 @@ export class FormularioServiComponent {
   }
 
   registrarServicio({ value }: { value: any }){
-
+    if(this.selectedProduct=='opcion3'){
+      this.registrarSublimacionTextilServicio(value);
+    }
+    
     if(this.selectedProduct=='opcion5'){
       this.registrarConfeccionServicio(value);
     }
@@ -65,5 +68,18 @@ export class FormularioServiComponent {
       }
     );
     console.log('SERVICIO DE CONFECCION REGISTRADO!!!');
+  }
+
+  registrarSublimacionTextilServicio(value: any ) {
+    this.sublimacionTextilService.registrarSublimacionTextil(value).subscribe(
+      (data) => {
+        this.route.navigate(['/consultarclientes']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('No se puede agregar el servicio de sublimacion textil... ' + error);
+      }
+    );
+    console.log('SERVICIO DE SUBLIMACION TEXTL REGISTRADO!!!');
   }
 }
