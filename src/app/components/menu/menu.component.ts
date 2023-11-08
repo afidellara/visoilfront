@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +12,8 @@ export class MenuComponent implements OnInit {
   isMenuVisible2 = false;
   isMenuVisible3 = false;
 
-  constructor() { }
+  constructor(private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -36,5 +39,8 @@ export class MenuComponent implements OnInit {
       default:
         return 0;
     }
+  }
+  solicitarOpcion() {
+    this.router.navigate(['/formularioServi']);
   }
 }
