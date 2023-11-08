@@ -11,6 +11,7 @@ import { PruebaComponent } from './components/prueba/prueba.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FormularioProductoComponent } from './components/products/formulario-producto/formulario-producto.component';
 import { ClienteAuthService } from './service/ClienteAuthService.service';
+import { AdministradorAuthService } from './service/AdministradorAuthService.service';
 import { HttpClientModule } from '@angular/common/http';
 import { TablaProductosComponent } from './components/products/tabla-productos/tabla-productos.component';
 import { ProductoService } from './service/ProductoService.service';
@@ -29,6 +30,7 @@ import { FormularioClienteComponent } from './components/cliente/formulario-clie
 import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabla-clientes.component';
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
+import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
 
 
 @NgModule({
@@ -60,7 +62,7 @@ import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.gua
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [ClienteAuthService, ProductoService,ClienteService ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
+  providers: [ClienteAuthService,AdministradorAuthService,ProductoService,ClienteService,IniciarSesionAdmGuard ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
