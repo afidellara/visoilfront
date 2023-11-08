@@ -55,6 +55,11 @@ export class FormularioServiComponent {
     if(this.selectedProduct=='opcion5'){
       this.registrarConfeccionServicio(value);
     }
+
+    
+    if(this.selectedProduct=='opcion6'){
+      this.registrarCorteServicio(value);
+    }
   }
 
   registrarConfeccionServicio(value: any ) {
@@ -81,5 +86,18 @@ export class FormularioServiComponent {
       }
     );
     console.log('SERVICIO DE SUBLIMACION TEXTL REGISTRADO!!!');
+  }
+
+  registrarCorteServicio(value: any ) {
+    this.corteService.registrarCorte(value).subscribe(
+      (data) => {
+        this.route.navigate(['/consultarclientes']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('No se puede agregar el servicio de corte... ' + error);
+      }
+    );
+    console.log('SERVICIO DE CORTE REGISTRADO!!!');
   }
 }
