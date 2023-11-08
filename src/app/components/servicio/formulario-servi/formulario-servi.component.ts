@@ -48,15 +48,19 @@ export class FormularioServiComponent {
   }
 
   registrarServicio({ value }: { value: any }){
+
+    if(this.selectedProduct=='opcion2'){
+      this.registrarTejidoIndustrialServicio(value);
+    }
+
     if(this.selectedProduct=='opcion3'){
       this.registrarSublimacionTextilServicio(value);
     }
-    
+
     if(this.selectedProduct=='opcion5'){
       this.registrarConfeccionServicio(value);
     }
 
-    
     if(this.selectedProduct=='opcion6'){
       this.registrarCorteServicio(value);
     }
@@ -90,6 +94,19 @@ export class FormularioServiComponent {
 
   registrarCorteServicio(value: any ) {
     this.corteService.registrarCorte(value).subscribe(
+      (data) => {
+        this.route.navigate(['/consultarclientes']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('No se puede agregar el servicio de corte... ' + error);
+      }
+    );
+    console.log('SERVICIO DE CORTE REGISTRADO!!!');
+  }
+
+  registrarTejidoIndustrialServicio(value: any ) {
+    this.tejidoIndustrialService.registrarTejidoIndustrial(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);

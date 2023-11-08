@@ -31,7 +31,12 @@ import { TablaClientesComponent } from './components/cliente/tabla-clientes/tabl
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
 import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
-
+import { CofeccionService } from './service/Servicios/CofeccionService.service';
+import { CorteService } from './service/Servicios/CorteService.service';
+import { CorteVinilloService } from './service/Servicios/CorteVinillo.service';
+import { EstampadoService } from './service/Servicios/EstampadoService.service';
+import { SublimacionTextilService } from './service/Servicios/SublimacionTextil.service';
+import { TejidoIndustrialService } from './service/Servicios/TejidoIndustrialService.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +67,22 @@ import { IniciarSesionAdmGuard } from './guard/IniciarSesionAdmGuard.guard';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
   ],
-  providers: [ClienteAuthService,AdministradorAuthService,ProductoService,ClienteService,IniciarSesionAdmGuard ,IniciarSesionClienteGuard,provideToastr(),provideAnimations()],
+  providers: [
+    ClienteAuthService,
+    AdministradorAuthService,
+    ProductoService,
+    ClienteService,
+    IniciarSesionAdmGuard,
+    IniciarSesionClienteGuard,
+    CofeccionService,
+    CorteService,
+    CorteVinilloService,
+    EstampadoService,
+    SublimacionTextilService,
+    TejidoIndustrialService,
+    provideToastr(),
+    provideAnimations(),
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
