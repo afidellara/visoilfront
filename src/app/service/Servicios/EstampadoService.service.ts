@@ -6,14 +6,14 @@ import { Estampado } from "../../models/servicios/Estampado.model";
 @Injectable()
 export class EstampadoService{
     
-    url: string = "http://localhost:4000/visoil/"
+    url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
     registrarEstampado(estampado: Estampado): Observable<any>{
-        return this.http.post(this.url+"registrarestampado", estampado); 
+        return this.http.post(this.url+"estampado", estampado); 
     }
 
     getEstampado():Observable<any>{

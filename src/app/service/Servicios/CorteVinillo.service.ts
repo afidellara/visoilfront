@@ -6,7 +6,7 @@ import { CorteVinillo } from "../../models/servicios/CorteVinillo.model";
 @Injectable()
 export class CorteVinilloService{
     
-    url: string = "http://localhost:4000/visoil/servicio"
+    url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 

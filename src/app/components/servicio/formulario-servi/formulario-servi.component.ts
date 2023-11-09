@@ -68,6 +68,10 @@ export class FormularioServiComponent {
     if(this.selectedProduct=='opcion1'){
       this.registrarCorteServicio(value);
     }
+
+    if(this.selectedProduct=='opcion4'){
+      this.registrarCorteServicio(value);
+    }
   }
 
   registrarConfeccionServicio(value: any ) {
@@ -133,5 +137,18 @@ export class FormularioServiComponent {
       }
     );
     console.log('SERVICIO DE CORTE VINILO REGISTRADO!!!');
+  }
+
+  registrarEstampadoService(value: any ) {
+    this.estampadoService.registrarEstampado(value).subscribe(
+      (data) => {
+        this.route.navigate(['/consultarclientes']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('No se puede agregar el servicio de estampado... ' + error);
+      }
+    );
+    console.log('SERVICIO DE ESTAMPADO REGISTRADO!!!');
   }
 }
