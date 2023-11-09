@@ -64,6 +64,10 @@ export class FormularioServiComponent {
     if(this.selectedProduct=='opcion6'){
       this.registrarCorteServicio(value);
     }
+
+    if(this.selectedProduct=='opcion1'){
+      this.registrarCorteServicio(value);
+    }
   }
 
   registrarConfeccionServicio(value: any ) {
@@ -112,9 +116,22 @@ export class FormularioServiComponent {
         console.log(data);
       },
       (error) => {
-        console.log('No se puede agregar el servicio de corte... ' + error);
+        console.log('No se puede agregar el servicio de tejido industrial... ' + error);
       }
     );
-    console.log('SERVICIO DE CORTE REGISTRADO!!!');
+    console.log('SERVICIO DE TEJIDO INDUSTRIAL REGISTRADO!!!');
+  }
+
+  registrarCorteViniloService(value: any ) {
+    this.corteVinilloService.registrarCorteVinillo(value).subscribe(
+      (data) => {
+        this.route.navigate(['/consultarclientes']);
+        console.log(data);
+      },
+      (error) => {
+        console.log('No se puede agregar el servicio de corte vinilo... ' + error);
+      }
+    );
+    console.log('SERVICIO DE CORTE VINILO REGISTRADO!!!');
   }
 }
