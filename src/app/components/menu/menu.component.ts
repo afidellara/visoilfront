@@ -40,7 +40,5 @@ export class MenuComponent implements OnInit {
         return 0;
     }
   }
-  solicitarOpcion() {
-    this.router.navigate(['/formularioServi']);
-  }
+
 }
