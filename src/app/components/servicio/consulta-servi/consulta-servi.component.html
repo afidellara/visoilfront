@@ -3,16 +3,13 @@
       <div class="title"> Consultar Servicio </div>
       <div class="filtro">
         <div class="input-box">
-          <input type="text" placeholder="Digite la informacion" required>
-        </div>
-        <div class="input-box">
-          <select>
-            <option value="opcion1">Todos</option>
-            <option value="opcion2">Cedula</option>
-            <option value="opcion3">Nombre</option>
-            <option value="opcion4">TipoServicio</option>
-            <option value="opcion4">Estado</option>
-            <option value="opcion4">Fecha</option>
+          <select [(ngModel)]="tipoServicio">
+            <option value="CorteVinillo">Corte Vinillo</option>
+            <option value="TejidoIndustrial">Tejido Industrial</option>
+            <option value="SublimacionTextil">Sublimacion Textil</option>
+            <option value="Estampado">Estampado</option>
+            <option value="Confeccion">Confeccion</option>
+            <option value="Corte">Corte</option>
           </select>
         </div>
         <div class="button">
@@ -23,11 +20,23 @@
       <table class="content-table" id="table">
         <thead>
           <tr>
-            <th scope="col">Cedula</th>
-            <th scope="col">Nombre</th>
-            <th scope="col">TipoServicio</th>
-            <th scope="col">Estado</th>
-            <th scope="col">FechaPedido</th>
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial' 
+            || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Nombre</th>
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
+             || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Descripcion</th>
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">Texto</th>
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">Color</th>
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo'">Tamaño</th>
+            <th scope="col" *ngIf="tipoServicio === 'Confeccion'">Adjuntas</th>
+            <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Tipo Tela</th>
+            <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Cantidad</th>
+            <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">PiezaCortar</th>
+
+
+
+
+
+
             <th scope="col"></th>
           </tr>
         </thead>

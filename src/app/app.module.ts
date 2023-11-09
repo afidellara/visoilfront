@@ -37,6 +37,7 @@ import { CorteVinilloService } from './service/Servicios/CorteVinillo.service';
 import { EstampadoService } from './service/Servicios/EstampadoService.service';
 import { SublimacionTextilService } from './service/Servicios/SublimacionTextil.service';
 import { TejidoIndustrialService } from './service/Servicios/TejidoIndustrialService.service';
+import { ProductosGuard } from './guard/ProductosGuard.guard';
 
 @NgModule({
   declarations: [
@@ -80,6 +81,7 @@ import { TejidoIndustrialService } from './service/Servicios/TejidoIndustrialSer
     EstampadoService,
     SublimacionTextilService,
     TejidoIndustrialService,
+    ProductosGuard,
     provideToastr(),
     provideAnimations(),
   ],

@@ -71,4 +71,12 @@ export class ConsultaServiComponent {
 
     this.cerrarModal(index, true); // Cierra el modal después de guardar
   }
+
+  tipoServicio: string = 'CorteVinillo'; // Inicialmente seleccionamos 'Tipo1'
+
+  // Función para cambiar el tipo de servicio seleccionado
+  cambiarTipoServicio(tipo: string) {
+    this.tipoServicio = tipo;
+  }
+
 }

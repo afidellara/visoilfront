@@ -2,9 +2,7 @@
   <img class="icon" src="/assets/img/VISOIL.png" height="180px"> 
 </section>
 <section class="Menu">
-  <a href="#" class="BT d-block p-3" id="btnInicio"> <img src="/assets/img/home.svg" class="list__img"> Inicio</a>
-  <a href="#" class="BT d-block p-3" id="btnRegistro"> <img src="/assets/img/user.svg" class="list__img">
-  Registro</a>
+  <a routerLink="/" href="#" class="BT d-block p-3" id="btnInicio"> <img src="/assets/img/home.svg" class="list__img"> Inicio</a>
   <ul class="list">
       <li class="list__item">
           <div class="list__button list__button--click" (click)="toggleMenu()">
@@ -15,10 +13,10 @@
 
           <ul class="list__show" [style.height.px]="isMenuVisible ? getHeight(1) : 0">
               <li class="list__inside">
-                  <a (click)="solicitarOpcion()" href="#" class="nav__link nav__link--inside">Registrar</a>
+                  <a routerLink="/registrarServi" href="#" class="nav__link nav__link--inside">Registrar</a>
               </li>
               <li class="list__inside">
-                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+                  <a routerLink="/consultarServi" href="#" class="nav__link nav__link--inside">Consultar</a>
               </li>
           </ul>
       </li>
@@ -34,10 +32,10 @@
 
           <ul class="list__show" [style.height.px]="isMenuVisible2 ? getHeight(2) : 0">
               <li class="list__inside">
-                  <a href="#" class="nav__link nav__link--inside">Registrar</a>
-              </li>
+                <a routerLink="/registerproducts" href="#" class="nav__link nav__link--inside">Registrar</a>
+            </li>
               <li class="list__inside">
-                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+                  <a routerLink="/consultarproductos" href="#" class="nav__link nav__link--inside">Consultar</a>
               </li>
           </ul>
       </li>
@@ -53,10 +51,10 @@
 
           <ul class="list__show" [style.height.px]="isMenuVisible3 ? getHeight(3) : 0">
               <li class="list__inside">
-                  <a href="#" class="nav__link nav__link--inside">Registrar</a>
+                  <a routerLink="/registrarcliente" href="#" class="nav__link nav__link--inside">Registrar</a>
               </li>
               <li class="list__inside">
-                  <a href="#" class="nav__link nav__link--inside">Consultar</a>
+                  <a routerLink="/consultarclientes" href="#" class="nav__link nav__link--inside">Consultar</a>
               </li>
           </ul>
       </li>

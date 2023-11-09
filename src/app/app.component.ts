@@ -18,8 +18,7 @@ export class AppComponent {
   }
 
   mostrarL():boolean{
-    return this.mostrar = this.clienteAuthService.estaLogueadoCliente() || this.administradorAuthService.estaLogueadoAdministrador();
-
+    return this.mostrar = this.mostrarLogin()
   }
   
 
