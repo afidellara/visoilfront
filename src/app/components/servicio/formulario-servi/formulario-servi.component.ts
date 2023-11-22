@@ -1,4 +1,5 @@
 import { Router } from '@angular/router';
+
 import { ToastrService } from 'ngx-toastr';
 import { SublimacionTextilService } from './../../../service/Servicios/SublimacionTextil.service';
 import { CorteVinilloService } from './../../../service/Servicios/CorteVinillo.service';
@@ -22,6 +23,8 @@ export class FormularioServiComponent {
   selectedFile: File | null = null;
   descripcion: string
   nombre: string
+  imageObj: File;
+  imageUrl: string;
 
   servicio: any = {
     tipo: '',
@@ -37,6 +40,7 @@ export class FormularioServiComponent {
     color: '',
     texto: '',
     tamanio: '',
+    
   }
 
 
@@ -67,7 +71,7 @@ export class FormularioServiComponent {
     }
 
     if(this.selectedProduct=='opcion4'){
-      this.registrarEstampadoService(value);
+      this.registrarServicio1();
     }
 
     if(this.selectedProduct=='opcion5'){
@@ -180,11 +184,9 @@ export class FormularioServiComponent {
   }
 
   registrarServicio1(): void {
-    if (this.selectedFile) {
+    // if (this.selectedFile) {
       const formData = new FormData();
-      formData.append('imagen', this.selectedFile);
-      formData.append('nombre', this.nombre);
-      formData.append('descripcion', this.descripcion);
+      formData.append('imagen', this.imageObj);
 
       this.estampadoService.registrarEstampado(formData).subscribe(
         (response) => {
@@ -194,8 +196,14 @@ export class FormularioServiComponent {
           console.error('Error al registrar el servicio', error);
         }
       );
-    } else {
-      console.error('Por favor, selecciona un archivo');
-    }
+    // } else {
+    //   console.error('Por favor, selecciona un archivo');
+    // }
   }
+
+  onImagePicked(event: Event): void {
+    const FILE = (event.target as HTMLInputElement).files[0];
+    this.imageObj = FILE;
+   }
+
 }
