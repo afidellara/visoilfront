@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit{
   passwordInputFocused: boolean = false;
   user: string = '';
   pass: string = '';
-  showPassword: boolean = false; 
+  showPassword: boolean = false;
   passwordToggleImageSrc: string = '/assets/img/eye-show.svg'; // Ruta de la imagen inicial
 
 
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit{
     this.user='';
     this.pass='';
   }
-  
-  
+
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
     this.passwordToggleImageSrc = this.showPassword ? '/assets/img/eye-close.svg' : '/assets/img/eye-show.svg';
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit{
 
   onInputBlur() {
     if (!this.user.trim()) {
-      this.usernameInputFocused = false; 
+      this.usernameInputFocused = false;
     }  }
   onPasswordInputFocus() {
     this.passwordInputFocused = true;
@@ -88,7 +88,7 @@ export class LoginComponent implements OnInit{
             // Si el cliente se autentica correctamente
             this.clienteAuthService.guardarInicioSesionEnCookie(responseCliente);
             this.toastr.success('Inicio de sesión exitoso', 'Cliente logueado');
-            this.route.navigate(['/registerproducts']);
+            this.route.navigate(['/galeria']);
             console.log('INICIA SESIÓN COMO CLIENTE');
           },
           (errorCliente) => {
@@ -98,7 +98,7 @@ export class LoginComponent implements OnInit{
                 // Si el administrador se autentica correctamente
                 this.administradorAuthService.guardarInicioSesionEnCookie(responseAdmin);
                 this.toastr.success('Inicio de sesión exitoso', 'Administrador logueado');
-                this.route.navigate(['/dashboard']); // Redirige al panel de administrador
+                this.route.navigate(['/galeria']); // Redirige al panel de administrador
                 console.log('INICIA SESIÓN COMO ADMINISTRADOR');
               },
               (errorAdmin) => {

@@ -1,4 +1,4 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Producto } from "../models/Producto.model";
@@ -12,7 +12,10 @@ export class ProductoService{
 
     }
 
-    registrarProdcuto(producto: Producto): Observable<any>{
-        return this.http.post(this.url+"registrarproducto", producto);
+    registrarProducto(producto: FormData): Observable<any> {
+      // Configura los encabezados necesarios para indicar que estás enviando datos en formato FormData
+
+      // Realiza la solicitud POST con los encabezados configurados
+      return this.http.post(this.url + 'registrarproducto', producto);
     }
 }

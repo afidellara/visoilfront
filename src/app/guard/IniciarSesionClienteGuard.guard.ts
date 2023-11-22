@@ -1,14 +1,13 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { Observable, map } from "rxjs";
+import { CanActivate, Router } from "@angular/router";
 import { ClienteAuthService } from "../service/ClienteAuthService.service";
 
 
 @Injectable()
 export class IniciarSesionClienteGuard implements CanActivate{
     constructor(private loginService: ClienteAuthService, private router: Router){}
-    
-    
+
+
     canActivate(): boolean {
         const existeEmpleadoCookie = this.loginService.estaLogueadoCliente();
         if (existeEmpleadoCookie) {

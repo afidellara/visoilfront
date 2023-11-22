@@ -13,11 +13,13 @@ import { FormularioServiComponent } from './components/servicio/formulario-servi
 import { ConsultarProductosComponent } from './components/products/consultar-productos/consultar-productos.component';
 import { IniciarSesionClienteGuard } from './guard/IniciarSesionClienteGuard.guard';
 import { ProductosGuard } from './guard/ProductosGuard.guard';
+import { GaleriaComponent } from './components/galeria/galeria.component';
 
 
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
+  {path: 'galeria', component:GaleriaComponent},
   {path: 'registerproducts', component:FormularioProductoComponent,canActivate:[IniciarSesionClienteGuard, ProductosGuard]},
   {path: 'tablaproducts', component:TablaProductosComponent,canActivate:[IniciarSesionClienteGuard]},
   {path: 'registrarcliente', component:FormularioClienteComponent,canActivate:[IniciarSesionClienteGuard]},

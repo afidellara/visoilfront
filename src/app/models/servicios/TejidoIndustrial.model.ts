@@ -1,7 +1,7 @@
 export class TejidoIndustrial {
 
     id: String
-    imagen: String
+    imagen: File
     color: String
     texto: String
     tipo: String
@@ -10,7 +10,7 @@ export class TejidoIndustrial {
 
     constructor(
         id: String,
-        imagen: String,
+        imagen: File,
         color: String,
         texto: String,
         tipo: String,

@@ -1,14 +1,13 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { Observable, map } from "rxjs";
+import { CanActivate, Router } from "@angular/router";
 import { AdministradorAuthService } from "../service/AdministradorAuthService.service";
 
 
 @Injectable()
 export class IniciarSesionAdmGuard implements CanActivate{
     constructor(private loginService: AdministradorAuthService, private router: Router){}
-    
-    
+
+
     canActivate(): boolean {
         const existeEmpleadoCookie = this.loginService.estaLogueadoAdministrador();
         if (existeEmpleadoCookie) {

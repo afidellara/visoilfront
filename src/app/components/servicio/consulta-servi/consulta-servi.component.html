@@ -16,11 +16,11 @@
           <input type="button" class="btt" (click)="agregarRegistros()" value="Visualizar">
         </div>
       </div>
-      
+
       <table class="content-table" id="table">
         <thead>
           <tr>
-            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial' 
+            <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
             || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Nombre</th>
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
              || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Descripcion</th>
@@ -31,12 +31,6 @@
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Tipo Tela</th>
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Cantidad</th>
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">PiezaCortar</th>
-
-
-
-
-
-
             <th scope="col"></th>
           </tr>
         </thead>
@@ -88,4 +82,3 @@
       </div>
     </div>
   </div>
-  

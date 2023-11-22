@@ -6,6 +6,7 @@ import { CofeccionService } from 'src/app/service/Servicios/CofeccionService.ser
 import { CorteService } from 'src/app/service/Servicios/CorteService.service';
 import { EstampadoService } from 'src/app/service/Servicios/EstampadoService.service';
 import { TejidoIndustrialService } from 'src/app/service/Servicios/TejidoIndustrialService.service';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-formulario-servi',
@@ -16,6 +17,10 @@ import { TejidoIndustrialService } from 'src/app/service/Servicios/TejidoIndustr
 @Injectable()
 export class FormularioServiComponent {
   selectedProduct: string = 'opcion1'; // Propiedad para almacenar la opción seleccionada
+  tejidoIndustrialForm: FormGroup;
+  selectedFile: File | null = null;
+  descripcion: string
+  nombre: string
 
   servicio: any = {
     tipo: '',
@@ -48,6 +53,9 @@ export class FormularioServiComponent {
   }
 
   registrarServicio({ value }: { value: any }){
+    if(this.selectedProduct=='opcion1'){
+      this.registrarCorteViniloService(value);
+    }
 
     if(this.selectedProduct=='opcion2'){
       this.registrarTejidoIndustrialServicio(value);
@@ -55,6 +63,10 @@ export class FormularioServiComponent {
 
     if(this.selectedProduct=='opcion3'){
       this.registrarSublimacionTextilServicio(value);
+    }
+
+    if(this.selectedProduct=='opcion4'){
+      this.registrarEstampadoService(value);
     }
 
     if(this.selectedProduct=='opcion5'){
@@ -65,13 +77,7 @@ export class FormularioServiComponent {
       this.registrarCorteServicio(value);
     }
 
-    if(this.selectedProduct=='opcion1'){
-      this.registrarCorteServicio(value);
-    }
 
-    if(this.selectedProduct=='opcion4'){
-      this.registrarCorteServicio(value);
-    }
   }
 
   registrarConfeccionServicio(value: any ) {
@@ -113,7 +119,7 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE CORTE REGISTRADO!!!');
   }
 
-  registrarTejidoIndustrialServicio(value: any ) {
+  registrarTejidoIndustrialServicio({ value, files }: { value: any, files: any }) {
     this.tejidoIndustrialService.registrarTejidoIndustrial(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -150,5 +156,29 @@ export class FormularioServiComponent {
       }
     );
     console.log('SERVICIO DE ESTAMPADO REGISTRADO!!!');
+  }
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+  }
+
+  registrarServicio1(): void {
+    if (this.selectedFile) {
+      const formData = new FormData();
+      formData.append('imagen', this.selectedFile);
+      formData.append('nombre', this.nombre);
+      formData.append('descripcion', this.descripcion);
+
+      this.estampadoService.registrarEstampado(formData).subscribe(
+        (response) => {
+          console.log('Servicio registrado exitosamente', response);
+        },
+        (error) => {
+          console.error('Error al registrar el servicio', error);
+        }
+      );
+    } else {
+      console.error('Por favor, selecciona un archivo');
+    }
   }
 }
