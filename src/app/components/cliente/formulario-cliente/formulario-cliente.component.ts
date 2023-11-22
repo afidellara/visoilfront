@@ -1,5 +1,6 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Cliente } from '../../../models/Cliente.model';
 import { ClienteService } from '../../../service/ClienteService.service';
 
@@ -29,7 +30,7 @@ export class FormularioClienteComponent {
     pass: '',
   };
 
-  constructor(private clienteService: ClienteService, private route: Router) {}
+  constructor(private clienteService: ClienteService, private route: Router, private toastr:ToastrService) {}
 
   registrarCliente({ value }: { value: any }) {
     
@@ -37,8 +38,11 @@ export class FormularioClienteComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Cliente registrado exitosamente');
+
       },
       (error) => {
+        this.toastr.warning('Error al agregar cliente');
         console.log('No se puede agregar el cliente... ' + error);
       }
     );

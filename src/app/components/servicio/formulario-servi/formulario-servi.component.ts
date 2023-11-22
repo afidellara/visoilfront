@@ -1,4 +1,5 @@
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { SublimacionTextilService } from './../../../service/Servicios/SublimacionTextil.service';
 import { CorteVinilloService } from './../../../service/Servicios/CorteVinillo.service';
 import { Component, Injectable } from '@angular/core';
@@ -45,7 +46,7 @@ export class FormularioServiComponent {
     private estampadoService: EstampadoService,
     private sublimacionTextilService: SublimacionTextilService,
     private tejidoIndustrialService: TejidoIndustrialService,
-    private route:Router){}
+    private route:Router, private toastr:ToastrService){}
 
   onProductSelected(event: any) {
     this.selectedProduct = event.target.value;
@@ -85,9 +86,11 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de confeccion registrado exitosamente');
       },
       (error) => {
         console.log('No se puede agregar el servicio de confeccion... ' + error);
+        this.toastr.warning('Error al agregar servicio de confección');
       }
     );
     console.log('SERVICIO DE CONFECCION REGISTRADO!!!');
@@ -98,8 +101,11 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de sublimación registrado exitosamente');
+
       },
       (error) => {
+        this.toastr.warning('Error al agregar servicio de sublimación textil');
         console.log('No se puede agregar el servicio de sublimacion textil... ' + error);
       }
     );
@@ -111,8 +117,11 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de corte registrado exitosamente');
+
       },
       (error) => {
+        this.toastr.warning('Error al agregar servicio de corte');
         console.log('No se puede agregar el servicio de corte... ' + error);
       }
     );
@@ -124,8 +133,11 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de tejido industrial registrado exitosamente');
+
       },
       (error) => {
+        this.toastr.warning('Error al agregar servicio de tejido industrial');
         console.log('No se puede agregar el servicio de tejido industrial... ' + error);
       }
     );
@@ -137,8 +149,10 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de corte vinilo registrado exitosamente');
       },
       (error) => {
+        this.toastr.warning('Error al agregar servicio de corte vinilo');
         console.log('No se puede agregar el servicio de corte vinilo... ' + error);
       }
     );
@@ -150,8 +164,11 @@ export class FormularioServiComponent {
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
+        this.toastr.success('Servicio de estampado registrado exitosamente');
+
       },
       (error) => {
+        this.toastr.warning('Error al agregar servicio de estampado');
         console.log('No se puede agregar el servicio de estampado... ' + error);
       }
     );
