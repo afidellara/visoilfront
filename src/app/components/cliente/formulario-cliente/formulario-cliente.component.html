@@ -1,13 +1,16 @@
 <div class="container">
-  <h1 class="form-title">Registrar Cliente</h1>
+  <h1 class="title">Registrar Cliente</h1>
   <form #adminForm="ngForm" (submit)="registrarCliente(adminForm)">
-    <div class="main-user-info">
-      <div class="user-input-box">
-        <label for="tipoDocumento">Tipo de documento</label>
+    <div class="user-details">
+      <div class="input-box">
+        <label class="details" for="tipoDocumento">Tipo de documento</label>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01"
-              >Escoja:</label
+            <label
+              class="input-group-text"
+              class="details"
+              for="inputGroupSelect01"
+              >Seleccione: </label
             >
           </div>
           <select
@@ -24,8 +27,8 @@
           </select>
         </div>
       </div>
-      <div class="user-input-box">
-        <label for="cedula">Cédula</label>
+      <div class="input-box">
+        <label class="details" for="cedula">Cédula</label>
         <input
           type="text"
           id="cedula"
@@ -35,8 +38,8 @@
           required
         />
       </div>
-      <div class="user-input-box">
-        <label for="nombre">Nombres</label>
+      <div class="input-box">
+        <label class="details" for="nombre">Nombres</label>
         <input
           type="text"
           id="nombre"
@@ -46,8 +49,8 @@
           [(ngModel)]="cliente.nombre"
         />
       </div>
-      <div class="user-input-box">
-        <label for="apellido">Apellidos</label>
+      <div class="input-box">
+        <label class="details" for="apellido">Apellidos</label>
         <input
           type="text"
           id="apellido"
@@ -58,7 +61,7 @@
         />
       </div>
       <div class="gender-details-box">
-        <span class="gender-title">Género</span>
+        <span class="input-box">Género</span>
         <div class="gender-category">
           <input
             type="radio"
@@ -67,7 +70,7 @@
             value="Masculino"
             [(ngModel)]="cliente.genero"
           />
-          <label for="masculino">Masculino</label>
+          <label class="details" for="masculino">Masculino</label>
           <input
             type="radio"
             name="genero"
@@ -75,7 +78,7 @@
             value="Femenino"
             [(ngModel)]="cliente.genero"
           />
-          <label for="femenino">Femenino</label>
+          <label class="details" for="femenino">Femenino</label>
           <input
             type="radio"
             name="genero"
@@ -83,7 +86,7 @@
             value="Otro"
             [(ngModel)]="cliente.genero"
           />
-          <label for="otro">Otro</label>
+          <label class="details" for="otro">Otro</label>
           <input
             type="radio"
             name="genero"
@@ -91,11 +94,11 @@
             value="No especificado"
             [(ngModel)]="cliente.genero"
           />
-          <label for="noEspecificado">No especificado</label>
+          <label class="details" for="noEspecificado">No especificado</label>
         </div>
       </div>
-      <div class="user-input-box">
-        <label for="fechaNacimiento">Fecha de Nacimiento</label>
+      <div class="input-box">
+        <label class="details" for="fechaNacimiento">Fecha de Nacimiento</label>
         <input
           type="date"
           id="fechaNacimiento"
@@ -104,8 +107,10 @@
           [(ngModel)]="cliente.fechaNacimiento"
         />
       </div>
-      <div class="user-input-box">
-        <label for="correoElectronico">Correo Electrónico</label>
+      <div class="input-box">
+        <label class="details" for="correoElectronico"
+          >Correo Electrónico</label
+        >
         <input
           type="email"
           id="correo"
@@ -115,8 +120,8 @@
           [(ngModel)]="cliente.correo"
         />
       </div>
-      <div class="user-input-box">
-        <label for="contraseña">Contraseña</label>
+      <div class="input-box">
+        <label class="details" for="contraseña">Contraseña</label>
         <input
           type="password"
           id="pass"
@@ -126,8 +131,8 @@
           [(ngModel)]="cliente.pass"
         />
       </div>
-      <div class="user-input-box">
-        <label for="numeroTelefono">Número de Teléfono</label>
+      <div class="input-box">
+        <label class="details" for="numeroTelefono">Número de Teléfono</label>
         <input
           type="tel"
           id="telefono"
@@ -136,8 +141,8 @@
           [(ngModel)]="cliente.telefono"
         />
       </div>
-      <div class="user-input-box">
-        <label for="direccion">Dirección</label>
+      <div class="input-box">
+        <label class="details" for="direccion">Dirección</label>
         <input
           type="text"
           id="direccion"
@@ -146,20 +151,26 @@
           [(ngModel)]="cliente.direccion"
         />
       </div>
-      <div class="user-input-box">
-        <div class="mb-3">
-          <label for="fotoPerfil" class="form-label">Foto de Perfil</label>
+      <div class="filed">
+        <span class="details">
+          Foto de Perfil
+      </span>
+        <div class="file-input-container">
+          <label for="file-input" class="custom-file-upload">
+            Cargar imagen
+          </label>
           <input
-            class="form-control"
-            type="file"
             id="fotoPerfil"
-            name="fotoPerfil"
+            type="file"
+            class="imgg"
             [(ngModel)]="cliente.fotoPerfil"
+            name="fotoPerfil"
+            accept="image/*"
           />
         </div>
       </div>
-      <div class="user-input-box">
-        <label for="ciudad">Ciudad</label>
+      <div class="input-box">
+        <label class="details" for="ciudad">Ciudad</label>
         <input
           type="text"
           id="ciudad"
@@ -169,8 +180,8 @@
         />
       </div>
     </div>
-    <div class="form-submit-btn">
-      <input type="submit" value="Registrar" />
+    <div class="button">
+      <input type="submit" class="btt" value="Registrar" />
     </div>
   </form>
 </div>
