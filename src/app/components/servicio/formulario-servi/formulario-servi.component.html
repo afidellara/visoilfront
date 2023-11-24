@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="registrarServicio1()" enctype="multipart/form-data">
+  <form (ngSubmit)="registrarServicio()" enctype="multipart/form-data">
     <div class="details2">
       <div class="title">Registro de Servicio</div>
       <div class="input-box">
@@ -19,10 +19,10 @@
         <span class="details"> Nombre </span>
         <input type="text" placeholder="Digite el nombre" name="nombre" [(ngModel)]="servicio.nombre" required />
       </div>
-      <div class="input-box" *ngIf="selectedProduct === 'opcion5'">
+      <!-- <div class="input-box" *ngIf="selectedProduct === 'opcion5'">
         <span class="details"> Adjuntas </span>
         <input type="text" placeholder="Digite Adjunto" name="adjuntas" [(ngModel)]="servicio.adjuntas" required />
-      </div>
+      </div> -->
       <div class="input-box">
         <span class="details"> Descripcion </span>
         <input type="text" placeholder="Digite la descripcion" name="descripcion" [(ngModel)]="servicio.descripcion" required />
@@ -32,7 +32,9 @@
           selectedProduct === 'opcion1' ||
           selectedProduct === 'opcion2' ||
           selectedProduct === 'opcion3' ||
-          selectedProduct === 'opcion4'
+          selectedProduct === 'opcion4' ||
+          selectedProduct === 'opcion5' ||
+          selectedProduct === 'opcion6'
         "
       >
         <div class="filed">
@@ -41,7 +43,7 @@
             <label for="file-input" class="custom-file-upload">
               Cargar imagen
             </label>
-            <input id="file-input" type="file" class="imgg" name="imagen" (change)="onFileSelected($event)" />
+            <input id="file-input" type="file" class="imgg" name="imagen" (change)="onImagePicked($event)" />
           </div>
         </div>
       </ng-container>
@@ -78,6 +80,10 @@
           <input type="text" placeholder="Digite pieza a cortar" name="piezaCorte" [(ngModel)]="servicio.piezaCorte" required />
         </div>
       </ng-container>
+      <div class="input-box">
+        <span class="details"> Telefono </span>
+        <input type="text" placeholder="Digite el contacto de wpp" name="telefono" [(ngModel)]="servicio.telefono" required />
+      </div>
     </div>
     <div class="button" style="margin-top: 38px;">
       <input type="submit" class="btt" value="Registrar" />

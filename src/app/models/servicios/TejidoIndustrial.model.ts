@@ -7,7 +7,8 @@ export class TejidoIndustrial {
     tipo: String
     cedula:String
     nombre:String
-
+    estado: String
+    telefono: String
     constructor(
         id: String,
         imagen: File,
@@ -15,7 +16,9 @@ export class TejidoIndustrial {
         texto: String,
         tipo: String,
         cedula:String,
-        nombre:String
+        nombre:String,
+        estado: String,
+        telefono: String
     ) {
         this.id = id
         this.imagen = imagen
@@ -23,6 +26,8 @@ export class TejidoIndustrial {
         this.texto = texto
         this.tipo = tipo
         this.cedula = cedula
-        this.nombre = nombre
+        this.nombre = nombre,
+        this.estado = estado
+        this.telefono = telefono
     }
 }

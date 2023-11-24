@@ -1,56 +1,14 @@
+
 <div class="gallery">
+  <div *ngFor="let producto of productos; let i = index">
     <div class="content">
-        <img src="\assets\img\blusa.png">
-        <h3>Blusa</h3>
-        <p>
-            Esta encantadora camisa presenta un fondo de un azul profundo y rico que proporciona un telón de fondo vibrante y llamativo.
-        </p>
-        <h6>$100.0</h6>
-        <button class="Buy"> ¡Compralo ya!</button>
+      <img src="{{ producto.imagen }}" alt="imagen del producto" class="imagen-v">
+      <h3>{{producto.nombre}}</h3>
+      <p>{{producto.descripcion}}</p>
+      <h6>${{producto.precio}}</h6>
+      <button class="Buy">¡Compralo ya!</button>
     </div>
-
-    <div class="content">
-        <img src="\assets\img\blusita.png">
-        <h3>Blusitica</h3>
-        <p>
-            La camisa está confeccionada en un tejido ligero y cómodo que permite una buena circulación del aire, lo que la hace perfecta para climas cálidos o para llevar en capas en estaciones más frescas. 
-        </p>
-        <h6>$100.0</h6>
-        <button class="Buy"> ¡Compralo ya!</button>
-    </div>
-
-
-    <div class="content">
-        <img src="\assets\img\blusa.png">
-        <h3>Camisa</h3>
-        <p>
-            Esta camisa es una elección ideal para añadir un toque de estilo y color a tu guardarropa. Es perfecta para ocasiones informales y puede combinarse fácilmente con jeans o pantalones de tela para un look fresco y moderno. 
-        </p>
-        <h6>$100.0</h6>
-        <button class="Buy"> ¡Compralo ya!</button>
-    </div>
-
-    <div class="content">
-        <img src="\assets\img\blusa.png">
-        <h3>Sueter</h3>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat ut eos accusantium porro nemo ducimus
-            exercitationem ipsum voluptas. Optio sequi nihil dolore! Harum magni atque doloribus necessitatibus dolore!
-            Perspiciatis, ipsum?
-        </p>
-        <h6>$100.0</h6>
-        <button class="Buy"> ¡Compralo ya!</button>
-    </div>
-
-    <div class="content">
-        <img src="\assets\img\blusa.png">
-        <h3>Blusa</h3>
-        <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat ut eos accusantium porro nemo ducimus
-            exercitationem ipsum voluptas. Optio sequi nihil dolore! Harum magni atque doloribus necessitatibus dolore!
-            Perspiciatis, ipsum?
-        </p>
-        <h6>$100.0</h6>
-        <button class="Buy"> ¡Compralo ya!</button>
-    </div>
+  </div>
 </div>
+
+

@@ -13,9 +13,10 @@ export class ProductoService{
     }
 
     registrarProducto(producto: FormData): Observable<any> {
-      // Configura los encabezados necesarios para indicar que estás enviando datos en formato FormData
-
-      // Realiza la solicitud POST con los encabezados configurados
       return this.http.post(this.url + 'registrarproducto', producto);
+    }
+
+    getProductos(): Observable<any> {
+      return this.http.get(this.url + 'productos');
     }
 }

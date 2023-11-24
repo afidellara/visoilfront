@@ -32,5 +32,9 @@ export class EstampadoService{
         return this.http.put(this.url + "estampado/" + id, estampado);
     }
 
+    modificarEstadoEstampado(id: String, estado: string): Observable<any> {
+      return this.http.put(this.url + "estampado/" + id, estado);
+  }
+
 
 }

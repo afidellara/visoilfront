@@ -1,3 +1,4 @@
+import { Estampado } from './../../../models/servicios/Estampado.model';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
@@ -9,6 +10,7 @@ import { CorteService } from 'src/app/service/Servicios/CorteService.service';
 import { EstampadoService } from 'src/app/service/Servicios/EstampadoService.service';
 import { TejidoIndustrialService } from 'src/app/service/Servicios/TejidoIndustrialService.service';
 import { FormGroup } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-formulario-servi',
@@ -21,8 +23,6 @@ export class FormularioServiComponent {
   selectedProduct: string = 'opcion1'; // Propiedad para almacenar la opción seleccionada
   tejidoIndustrialForm: FormGroup;
   selectedFile: File | null = null;
-  descripcion: string
-  nombre: string
   imageObj: File;
   imageUrl: string;
 
@@ -32,7 +32,6 @@ export class FormularioServiComponent {
     nombre: '',
     imagen: '',
     descripcion: '',
-    adjuntas: '',
     tipoTela: '',
     cantidad: '',
     piezaCorte: '',
@@ -40,7 +39,8 @@ export class FormularioServiComponent {
     color: '',
     texto: '',
     tamanio: '',
-    
+    estado:'',
+    telefono:''
   }
 
 
@@ -57,35 +57,48 @@ export class FormularioServiComponent {
     console.log(this.selectedProduct);
   }
 
-  registrarServicio({ value }: { value: any }){
+  registrarServicio(){
+
+    const formData = new FormData();
+      formData.append('tipo', this.servicio.tipo);
+      formData.append('cedula', this.servicio.cedula);
+      formData.append('nombre', this.servicio.nombre);
+      formData.append('imagen', this.imageObj);
+      formData.append('descripcion', this.servicio.descripcion);
+      formData.append('tipoTela', this.servicio.tipoTela);
+      formData.append('cantidad', this.servicio.cantidad);
+      formData.append('color', this.servicio.color);
+      formData.append('texto', this.servicio.texto);
+      formData.append('tamanio', this.servicio.tamanio);
+      formData.append('telefono', this.servicio.telefono);
+
+
     if(this.selectedProduct=='opcion1'){
-      this.registrarCorteViniloService(value);
+      this.registrarCorteViniloService(formData);
     }
 
     if(this.selectedProduct=='opcion2'){
-      this.registrarTejidoIndustrialServicio(value);
+      this.registrarTejidoIndustrialServicio(formData);
     }
 
     if(this.selectedProduct=='opcion3'){
-      this.registrarSublimacionTextilServicio(value);
+      this.registrarSublimacionTextilServicio(formData);
     }
 
     if(this.selectedProduct=='opcion4'){
-      this.registrarServicio1();
+      this.registrarEstampadoService(formData);
     }
 
     if(this.selectedProduct=='opcion5'){
-      this.registrarConfeccionServicio(value);
+      this.registrarConfeccionServicio(formData);
     }
 
     if(this.selectedProduct=='opcion6'){
-      this.registrarCorteServicio(value);
+      this.registrarCorteServicio(formData);
     }
-
-
   }
 
-  registrarConfeccionServicio(value: any ) {
+  registrarConfeccionServicio(value: FormData ) {
     this.confeccionService.registrarCofeccion(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -100,7 +113,7 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE CONFECCION REGISTRADO!!!');
   }
 
-  registrarSublimacionTextilServicio(value: any ) {
+  registrarSublimacionTextilServicio(value: FormData ) {
     this.sublimacionTextilService.registrarSublimacionTextil(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -116,7 +129,7 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE SUBLIMACION TEXTL REGISTRADO!!!');
   }
 
-  registrarCorteServicio(value: any ) {
+  registrarCorteServicio(value: FormData ) {
     this.corteService.registrarCorte(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -132,7 +145,7 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE CORTE REGISTRADO!!!');
   }
 
-  registrarTejidoIndustrialServicio({ value, files }: { value: any, files: any }) {
+  registrarTejidoIndustrialServicio( value: FormData) {
     this.tejidoIndustrialService.registrarTejidoIndustrial(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -148,7 +161,7 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE TEJIDO INDUSTRIAL REGISTRADO!!!');
   }
 
-  registrarCorteViniloService(value: any ) {
+  registrarCorteViniloService(value: FormData ) {
     this.corteVinilloService.registrarCorteVinillo(value).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
@@ -163,8 +176,8 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE CORTE VINILO REGISTRADO!!!');
   }
 
-  registrarEstampadoService(value: any ) {
-    this.estampadoService.registrarEstampado(value).subscribe(
+  registrarEstampadoService(estampado: FormData ) {
+    this.estampadoService.registrarEstampado(estampado).subscribe(
       (data) => {
         this.route.navigate(['/consultarclientes']);
         console.log(data);
@@ -179,13 +192,13 @@ export class FormularioServiComponent {
     console.log('SERVICIO DE ESTAMPADO REGISTRADO!!!');
   }
 
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];
-  }
+
 
   registrarServicio1(): void {
     // if (this.selectedFile) {
+
       const formData = new FormData();
+      formData.append('nombre', this.servicio.nombre);
       formData.append('imagen', this.imageObj);
 
       this.estampadoService.registrarEstampado(formData).subscribe(
@@ -194,6 +207,14 @@ export class FormularioServiComponent {
         },
         (error) => {
           console.error('Error al registrar el servicio', error);
+
+          // Imprimir detalles específicos del error
+          if (error instanceof HttpErrorResponse) {
+            console.error('Status:', error.status);
+            console.error('Mensaje:', error.error.message);
+          }
+
+          this.toastr.warning('Error al registrar el servicio', 'Error');
         }
       );
     // } else {
@@ -204,6 +225,15 @@ export class FormularioServiComponent {
   onImagePicked(event: Event): void {
     const FILE = (event.target as HTMLInputElement).files[0];
     this.imageObj = FILE;
+    this.toastr.success('IMAGEN SELECCIONADA '+ this.imageObj.name);
+    console.log(FILE);
    }
+
+  onFileSelected(event: any): void {
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+    this.toastr.success('IMAGEN SELECCIONADA '+ this.selectedFile);
+
+  }
 
 }

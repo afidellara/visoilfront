@@ -63,33 +63,33 @@ body {
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
-  
+
 .content-table thead tr {
     background-color:  #7bc4c4;
     color: #ffffff;
     text-align: left;
     font-weight: bold;
 }
-  
+
 .content-table th,
 .content-table td {
  padding: 12px 15px;
  text-align: center;
 }
-  
+
 .content-table tbody tr {
     border-bottom: 1px solid #dddddd;
     color: black
 }
-  
+
 .content-table tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
 }
-  
+
 .content-table tbody tr:last-of-type {
     border-bottom: 2px solid #7bc4c4;;
 }
-  
+
 .content-table tbody tr.active-row {
     font-weight: bold;
     color:  #7bc4c4;;
@@ -103,43 +103,43 @@ body {
 
 .filtro {
   justify-content: space-between;
-  align-items: center;  
+  align-items: center;
 }
-  
+
 .filtro .input-box {
     display: inline-block;
     margin-right: 10px;
 }
-    
+
 .filtro .button {
     display: inline-block;
 }
 
 select {
-    width:220px; 
+    width:220px;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc; 
-    border-radius: 4px; 
-    background-color: #fff; 
-    color: #333; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
     border-color: #75bdbd;
   }
-  
+
   select:focus {
-    outline: none; 
-    border-color: #007bff; 
+    outline: none;
+    border-color: #007bff;
   }
-  
+
   select option {
-    background-color: #fff; 
-    color: #333; 
+    background-color: #fff;
+    color: #333;
   }
-  
+
   select option:hover {
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
   }
-  
+
   .container form .user-details{
     display: flex;
     flex-wrap: wrap;
@@ -166,4 +166,14 @@ form .user-details .input-box{
     border: 1px solid #75bdbd;
     padding-left: 15px;
     font-size: 16px;
+}
+
+.imagen-v{
+  height: 70px;
+  width: 100px;
+}
+
+.icono-v{
+  height: 35px;
+  width: 35px;
 }

@@ -8,8 +8,9 @@ export class CorteVinillo {
     tamanio: String;
     tipo: String;
     cedula:String;
+    estado: String;
+    telefono: String;
 
-    
 
     constructor(
         id: String,
@@ -21,6 +22,8 @@ export class CorteVinillo {
         tamanio: String,
         tipo: String,
         cedula:String,
+        estado: String,
+        telefono: String
     ) {
         this.id = id
         this.imagen = imagen
@@ -31,5 +34,7 @@ export class CorteVinillo {
         this.tamanio = tamanio
         this.tipo = tipo
         this.cedula = cedula
+        this.estado = estado
+        this.telefono = telefono
     }
 }

@@ -12,24 +12,24 @@ export class CofeccionService{
 
     }
 
-    registrarCofeccion(cofeccion: Cofeccion): Observable<any>{
+    registrarCofeccion(cofeccion: FormData): Observable<any>{
         return this.http.post(this.url+"confeccion", cofeccion);
     }
 
     getCofeccion():Observable<any>{
-        return this.http.get(this.url+"cofeccion");
+        return this.http.get(this.url+"confeccion");
     }
 
     eliminarCofeccion(id: string):Observable<any>{
-        return this.http.delete(this.url+"cofeccion/"+id);
+        return this.http.delete(this.url+"confeccion/"+id);
     }
 
     obtenerCofeccion(id:string): Observable<any>{
-        return this.http.get(this.url+"cofeccion/"+id);
+        return this.http.get(this.url+"confeccion/"+id);
     }
 
     modificarCofeccion(id: String, cofeccion: Cofeccion): Observable<any> {
-        return this.http.put(this.url + "cofeccion/" + id, cofeccion);
+        return this.http.put(this.url + "confeccion/" + id, cofeccion);
     }
 
 

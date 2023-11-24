@@ -12,7 +12,7 @@ export class TejidoIndustrialService{
 
     }
 
-    registrarTejidoIndustrial(tejidoIndustrial: TejidoIndustrial): Observable<any>{
+    registrarTejidoIndustrial(tejidoIndustrial: FormData): Observable<any>{
         return this.http.post(this.url+"tejidoIndustrial", tejidoIndustrial);
     }
 

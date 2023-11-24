@@ -5,32 +5,32 @@ import { CorteVinillo } from "../../models/servicios/CorteVinillo.model";
 
 @Injectable()
 export class CorteVinilloService{
-    
+
     url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
-    registrarCorteVinillo(corteVinillo: CorteVinillo): Observable<any>{
-        return this.http.post(this.url+"cortevinillo", corteVinillo); 
+    registrarCorteVinillo(corteVinillo: FormData): Observable<any>{
+        return this.http.post(this.url+"cortevinillo", corteVinillo);
     }
 
     getCorteVinillo():Observable<any>{
-        return this.http.get(this.url+"corteVinillo"); 
+        return this.http.get(this.url+"corteVinillo");
     }
 
     eliminarCorteVinillo(id: string):Observable<any>{
-        return this.http.delete(this.url+"corteVinillo/"+id); 
+        return this.http.delete(this.url+"corteVinillo/"+id);
     }
 
     obtenerCorteVinillo(id:string): Observable<any>{
-        return this.http.get(this.url+"corteVinillo/"+id); 
+        return this.http.get(this.url+"corteVinillo/"+id);
     }
 
     modificarCorteVinillo(id: String, corteVinillo: CorteVinillo): Observable<any> {
         return this.http.put(this.url + "corteVinillo/" + id, corteVinillo);
     }
 
-    
+
 }

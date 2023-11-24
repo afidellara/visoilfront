@@ -37,8 +37,8 @@ a{
 }
 
 .content{
-    width: 20%;
-    margin: 15px;
+    width: 300px;
+    margin: 20px;
     box-sizing: border-box;
     float: left;
     text-align: center;

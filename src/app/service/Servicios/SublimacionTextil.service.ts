@@ -5,32 +5,32 @@ import { SublimacionTextil } from "../../models/servicios/SublimacionTextil.mode
 
 @Injectable()
 export class SublimacionTextilService{
-    
+
     url: string = "http://localhost:4000/visoil/servicio/"
 
     constructor(private http: HttpClient){
 
     }
 
-    registrarSublimacionTextil(sublimacionTextil: SublimacionTextil): Observable<any>{
-        return this.http.post(this.url+"sublimacionTextil", sublimacionTextil); 
+    registrarSublimacionTextil(sublimacionTextil: FormData): Observable<any>{
+        return this.http.post(this.url+"sublimacionTextil", sublimacionTextil);
     }
 
     getSublimacionTextil():Observable<any>{
-        return this.http.get(this.url+"sublimacionTextil"); 
+        return this.http.get(this.url+"sublimacionTextil");
     }
 
     eliminarSublimacionTextil(id: string):Observable<any>{
-        return this.http.delete(this.url+"sublimacionTextil/"+id); 
+        return this.http.delete(this.url+"sublimacionTextil/"+id);
     }
 
     obtenerSublimaxionTextil(id:string): Observable<any>{
-        return this.http.get(this.url+"sublimacionTextil/"+id); 
+        return this.http.get(this.url+"sublimacionTextil/"+id);
     }
 
     modificarSublimaxionTextil(id: String, sublimacionTextil: SublimacionTextil): Observable<any> {
         return this.http.put(this.url + "sublimacionTextil/" + id, sublimacionTextil);
     }
 
-    
+
 }

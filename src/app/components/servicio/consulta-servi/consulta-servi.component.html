@@ -20,6 +20,7 @@
       <table class="content-table" id="table">
         <thead>
           <tr>
+            <th scope="col"> Imagen</th>
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
             || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Nombre</th>
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
@@ -27,24 +28,33 @@
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">Texto</th>
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">Color</th>
             <th scope="col" *ngIf="tipoServicio === 'CorteVinillo'">Tamaño</th>
-            <th scope="col" *ngIf="tipoServicio === 'Confeccion'">Adjuntas</th>
+            <!-- <th scope="col" *ngIf="tipoServicio === 'Confeccion'">Adjuntas</th> -->
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Tipo Tela</th>
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">Cantidad</th>
             <th scope="col" *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">PiezaCortar</th>
-            <th scope="col"></th>
+            <th scope="col">WhatsApp</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let registro of registros; let i = index">
-            <td>{{ registro.cedula }}</td>
-            <td>{{ registro.nombre }}</td>
-            <td>{{ registro.tipoServicio }}</td>
-            <td>{{ registro.estado }}</td>
-            <td>{{ registro.fechaPedido }}</td>
+          <tr *ngFor="let servicio of servicios; let i = index">
+            <td><img src="{{ servicio.imagen }}" alt="imagen del servicio" class="imagen-v"></td>
+            <td *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
+            || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.nombre }}</td>
+            <td *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'
+            || tipoServicio === 'SublimacionTextil' || tipoServicio === 'Estampado' || tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.descripcion }}</td>
+            <td *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">{{ servicio.texto }}</td>
+            <td *ngIf="tipoServicio === 'CorteVinillo' || tipoServicio === 'TejidoIndustrial'">{{ servicio.color }}</td>
+            <td *ngIf="tipoServicio === 'CorteVinillo'">{{ servicio.tamanio }}</td>
+            <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.tipoTela }}</td>
+            <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.cantidad }}</td>
+            <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.piezaCorte }}</td>
+            <td><a href="https://api.whatsapp.com/send?phone=57{{servicio.telefono}}"><img src="../../../../assets/img/whatsappT.png" class="icono-v" alt="icono de wpp"></a></td>
+            <td><a (click)="modificaEstadoEmpleado(servicio._id)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">{{servicio.estado}}</a></td>
             <td class="text-center">
               <a (click)="abrirModal(i)" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" data-bs-whatever="@mdo" class="btnEditar btn btn-primary">Editar</a>
-              <a (click)="eliminarRegistro(i)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">Borrar</a>
-
+              <a (click)="EliminarServicio(servicio._id)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">Borrar</a>
             </td>
           </tr>
         </tbody>
