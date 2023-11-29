@@ -3,10 +3,10 @@
     <div class="title">Consultar Clientes</div>
     <div class="filtro">
       <div class="input-box">
-        <input type="text" placeholder="Digite la informacion" required />
+        <input type="text" placeholder="Digite la informacion" required  (change)="cambiarQuery($event)"/>
       </div>
       <div class="input-box">
-        <select>
+        <select (change)="cambiarFiltro($event)">
           <option value="opcion1">Todos</option>
           <option value="opcion2">Cedula</option>
           <option value="opcion3">Nombre</option>
@@ -16,7 +16,7 @@
         <input
           type="button"
           class="btt"
-          (click)="agregarRegistros()"
+          (click)="filtrarRegistros()"
           value="Visualizar"
         />
       </div>
@@ -41,7 +41,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let registro of registros; let i = index">
+          <tr *ngFor="let registro of registrosFiltrados; let i = index">
             <td>{{ registro.tipoDocumento }}-{{ registro.cedula }}</td>
             <td>{{ registro.fotoPerfil }}</td>
             <td>{{ registro.nombre }} {{ registro.apellidos }}</td>
