@@ -68,6 +68,7 @@ export class ConsultaServiComponent {
 
 
   servicio: any = {
+    _id:'',
     tipo: '',
     cedula: '',
     nombre: '',
@@ -160,11 +161,12 @@ export class ConsultaServiComponent {
     });
   }
 
-  modificaEstadoEmpleado({ value }: { value: any }) {
-    value.estado = 'EN CURSO';
-    this.estampadoService.modificarEstadoEstampado(value.cedula, value.estado).subscribe(
-      () => {
-        this.listarEstampadoServicio();
+  modificaEstadoConfeccion(id: string, estado: string) {
+    console.log(id)
+    console.log(estado)
+    this.confeccionService.modificarEstadoConfeccion(id, estado).subscribe(
+      (data) => {
+        console.log("CONFECCION: ", data)
       },
       (error) => {
         console.error('Error al modificar el empleado:', error);
@@ -241,6 +243,4 @@ export class ConsultaServiComponent {
       this.listarCorteServicio()
     });
   }
-
-
-}
+ }

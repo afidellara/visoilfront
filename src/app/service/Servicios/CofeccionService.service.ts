@@ -1,7 +1,7 @@
+import { Cofeccion } from './../../models/servicios/Cofeccion.model';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { Cofeccion } from "../../models/servicios/Cofeccion.model";
 
 @Injectable()
 export class CofeccionService{
@@ -32,5 +32,12 @@ export class CofeccionService{
         return this.http.put(this.url + "confeccion/" + id, cofeccion);
     }
 
+  //   modificarEstadoCofeccion(id: String, estado: string): Observable<any> {
+  //     return this.http.put(this.url + "confeccionestado/" + id, estado);
+  // }
 
+    modificarEstadoConfeccion(id: string, estado: string): Observable<any> {
+      const body = { estado }; // Crear un objeto con el campo 'estado'
+      return this.http.put(`${this.url}confeccionestado/${id}`, body);
+    }
 }

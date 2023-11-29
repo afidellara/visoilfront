@@ -50,8 +50,15 @@
             <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.tipoTela }}</td>
             <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.cantidad }}</td>
             <td *ngIf="tipoServicio === 'Confeccion' || tipoServicio === 'Corte'">{{ servicio.piezaCorte }}</td>
-            <td><a href="https://api.whatsapp.com/send?phone=57{{servicio.telefono}}"><img src="../../../../assets/img/whatsappT.png" class="icono-v" alt="icono de wpp"></a></td>
-            <td><a (click)="modificaEstadoEmpleado(servicio._id)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">{{servicio.estado}}</a></td>
+            <td><a href="https://api.whatsapp.com/send?phone=57{{servicio.telefono}}&text='{{servicio.imagen}}'"><img src="../../../../assets/img/whatsappT.png" class="icono-v" alt="icono de wpp"></a></td>
+            <td>
+              <select [(ngModel)]="servicio.estado" (change)="modificaEstadoConfeccion(servicio._id,servicio.estado)">
+                <option value="pendiente" [ngStyle]="{'background-color': 'yellow'}">Pendiente (amarillo)</option>
+                <option value="en curso" [ngStyle]="{'background-color': 'blue', 'color': 'white'}">En Curso (azul)</option>
+                <option value="cancelado" [ngStyle]="{'background-color': 'red', 'color': 'white'}">Cancelado (rojo)</option>
+                <option value="enviado" [ngStyle]="{'background-color': 'green', 'color': 'white'}">Enviado (verde)</option>
+              </select>
+            </td>
             <td class="text-center">
               <a (click)="abrirModal(i)" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal' + i" data-bs-whatever="@mdo" class="btnEditar btn btn-primary">Editar</a>
               <a (click)="EliminarServicio(servicio._id)" class="btnEliminar btn btn-danger" style="margin-left: 7px;">Borrar</a>
