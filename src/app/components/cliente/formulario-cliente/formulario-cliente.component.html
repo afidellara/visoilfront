@@ -1,6 +1,6 @@
 <div class="container">
   <h1 class="title">Registrar Cliente</h1>
-  <form #adminForm="ngForm" (submit)="registrarCliente(adminForm)">
+  <form (ngSubmit)="registrarCliente()" enctype="multipart/form-data">
     <div class="user-details">
       <div class="input-box">
         <label class="details" for="tipoDocumento">Tipo de documento</label>
@@ -163,9 +163,9 @@
             id="fotoPerfil"
             type="file"
             class="imgg"
-            [(ngModel)]="cliente.fotoPerfil"
+            [(ngModel)]="selectedFile"
             name="fotoPerfil"
-            accept="image/*"
+            (change)="onImagePicked($event)"
           />
         </div>
       </div>

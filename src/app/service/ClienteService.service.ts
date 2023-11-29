@@ -12,7 +12,7 @@ export class ClienteService{
 
     }
 
-    registrarCliente(cliente: Cliente): Observable<any> {
+    registrarCliente(cliente: FormData): Observable<any> {
         return this.http.post(this.url + 'registrarcliente', cliente);
       }
     
